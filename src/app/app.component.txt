@@ -1,0 +1,79 @@
+<!-- 
+<div class="fx-container">
+    <div class="droppable-container first" 
+        [cdkDropListConnectedTo]="[container2]"
+        [cdkDropListData]="first"
+        cdkDropList 
+        #container1="cdkDropList">
+        <div class="box" *ngFor="let data of first" cdkDrag>
+            Drag me around
+        </div>
+    </div>
+    <div class="droppable-container second" 
+        [cdkDropListConnectedTo]="[container1]"
+        
+        [cdkDropListData]="done"
+        cdkDropList 
+        (cdkDropListDropped)="drop($event)"
+        #container2="cdkDropList">
+        <div class="box" *ngFor="let data of second" cdkDrag>
+            Drag me around
+        </div>
+    </div>
+</div> -->
+
+
+<!-- <ng-container *appTest="show; temp:disp" >
+    <div @show style="padding: 10px; border: solid black">
+            Hello
+    </div>
+</ng-container>
+
+<ng-template #disp>
+            <div @show style="padding: 10px; border: solid black">
+                    Sad
+            </div>
+</ng-template>
+
+<button (click)="show = !show">Show</button>
+
+<!-- <div *appRepeat="let item of [1, 2]">Hello{{ item }}</div> -->
+
+<!-- <ng-template [appRepeat] [appRepeatOf]="" let-item let-i="index" let-a='default'>
+    <div>{{ i }}Hello {{ item }}{{ a }}</div> 
+</ng-template> -->
+<!--<div *appRepeat="let item of ['Pradeep', 'Sarangan']; let i=index; let a=default">
+        {{item}} {{i}} {{a}}
+</div> -->
+<!-- <app-parent [parent]="'data'"></app-parent> -->
+<!-- <app-card></app-card>
+<app-card class="red"></app-card>
+
+<p><app-card></app-card></p> -->
+
+<!-- A&#123;4&#125 -->
+<!-- " A"+"'{{'"+"'}}'" -->
+
+
+<!-- A{{ '{' }}{{ '{' }}4{{ '}' }}{{ '}' }} -->
+<!-- A{{ '\{\{' }}4{{ '\}\}' }} -->
+
+<!-- <span ngNonBindable>A{{4}}</span> -->
+
+<!-- <app-menu></app-menu> -->
+
+<!-- <span [innerHTML]="'A&#123;&#123;4&#125;&#125;'"></span>  -->
+<!-- 
+<h1>
+    Show using animation builder
+</h1>
+<button mat-button (click)="buildAnimation()">Show</button>
+<p #quote *ngIf="show" class="conent">Animation Builder rocks !!</p> -->
+
+<!-- <app-dynamic></app-dynamic> -->
+
+
+<!-- <app-view-container-ref-demo></app-view-container-ref-demo> -->
+
+
+

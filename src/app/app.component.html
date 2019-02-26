@@ -1,0 +1,19 @@
+<header>
+    <mat-toolbar class="mat-elevation-z6" color="primary">Advance Angular Topics</mat-toolbar>
+</header>
+
+<mat-sidenav-container>
+    <mat-sidenav class="mat-elevation-z2" mode="side" [opened]="true">
+        <mat-list role="list">
+            <mat-list-item routerLinkActive="active" routerLink="/viewContainerReference" class="menu" role="listitem">View Container Reference</mat-list-item>
+            <mat-list-item class="menu" role="listitem">OnPush ChangeDetection</mat-list-item>
+            <mat-list-item class="menu" role="listitem">Animation Builder</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/cdkOverlay" class="menu" role="listitem">CDK Overlay</mat-list-item>
+            <mat-list-item class="menu" role="listitem">Structural Directive</mat-list-item>
+            <mat-list-item class="menu" role="listitem">Angular Animation</mat-list-item>
+          </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

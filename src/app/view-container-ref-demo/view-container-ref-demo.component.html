@@ -1,0 +1,65 @@
+<h1>Ways of Injecting Dynamic component</h1>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Using View child(
+      <b>createEmbeddedView()</b>)</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container #holder>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Using
+      <b>ngTemplateOutlet</b> directive</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container [ngTemplateOutlet]="content" [ngTemplateOutletContext]="{'$implicit': 'using template outlet', backgroundColor: 'rosybrown'}">
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Using
+      <b>*ngTemplateOutlet</b> as structural directive</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container *ngTemplateOutlet="content; context: {'$implicit': 'using template outlet', backgroundColor: 'pink'}">
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Using
+      <b>Dynamic component </b>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container #dynamicRender>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Using
+      <b>CDK Portal </b>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-container cdkPortalOutlet>
+    </ng-container>
+  </mat-card-content>
+</mat-card>
+
+<ng-template let-data let-bg="backgroundColor" #content>
+  <div class="dynamic-template" [style.backgroundColor]="bg">
+    <p>$implicit context: {{ data }}</p>
+    <p>background color: {{ bg }}</p>
+  </div>
+</ng-template>

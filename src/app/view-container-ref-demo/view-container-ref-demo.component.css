@@ -1,0 +1,11 @@
+.red{
+    background-color:rosybrown
+}
+
+mat-card{
+    margin-bottom: 10px;
+}
+
+.dynamic-template{
+    padding: 10px;
+}
