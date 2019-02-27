@@ -1,0 +1,6 @@
+<p> Control Value Accessor </p>
+<form [formGroup]="reactiveForm">
+<app-cvaform formControlName="cva"></app-cvaform>
+</form>
+<p> Value you are typed : {{reactiveForm.get('cva').value}}</p>
+<p> form valid or not:  {{reactiveForm.valid}}</p>

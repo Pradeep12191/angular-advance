@@ -21,9 +21,9 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
 
     const p = new Promise((resolve, reject) => {
-      setTimeout(3000, () => {
+      setTimeout(() => {
         resolve('3 sec');
-      });
+      }, 3000);
     });
 
     p.then(function(data) {
@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
       // return data;
     }).then(function(data) {
 
-    })
+    });
 
   }
 

@@ -308,7 +308,7 @@ export class MatKeyboardKeyComponent implements OnInit {
       // IE
       this.input.nativeElement.focus();
 
-      return window.document['selection'].createRange().text.length;
+      return (window.document as Document)['selection'].createRange().text.length;
     }
   }
 

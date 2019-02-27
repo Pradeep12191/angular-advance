@@ -28,9 +28,10 @@ import { VirtualKeypadComponent } from './virtual-keypad/virtual-keypad.componen
 import { MatKeyboardModule } from './mat-keyboard/public_api';
 import { AppRoutingModule } from './app-routing.module';
 import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
-
+import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlvalueaccessor.component';
+import { CvaformComponent } from './controlvalueaccessor/cvaform/cvaform.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -43,12 +44,13 @@ import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
     PortalModule,
     MatButtonModule,
     MatKeyboardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
     // MatSnackBarModule,
-    // ServiceWorkerModule.register('./ngsw-worker.js', { enabled: environment.production })
+    // ServiceWorkerModule.register('./ngsw-worker.js',
+    // enabled
   ],
-  declarations: [
-    AppComponent,
+  declarations: [AppComponent,
     DynamicComponent,
     ViewContainerRefDemoComponent,
     TestDirective,
@@ -60,10 +62,13 @@ import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
     MenuComponent,
     InputComponent,
     VirtualKeypadComponent,
-    CdkOverlayComponent
+    CdkOverlayComponent,
+    ControlvalueaccessorComponent,
+    CvaformComponent
   ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [CardComponent, DynamicComponent]
 })
+
 export class AppModule { }
