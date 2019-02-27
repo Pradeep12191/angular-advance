@@ -19,7 +19,6 @@ export class CvaformComponent implements OnInit, ControlValueAccessor {
   constructor(private _renderer: Renderer2) { }
 
   ngOnInit() {
-    console.log('oninti');
   }
   dataBind() {
     console.log('cvaId', this.cvaId.nativeElement.textContent);
