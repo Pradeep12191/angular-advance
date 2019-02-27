@@ -7,7 +7,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
   styleUrls: ['./controlvalueaccessor.component.css']
 })
 export class ControlvalueaccessorComponent implements OnInit {
-  // cva = new FormControl('sample conntrol value accessor');
+  cvaModel;
   reactiveForm: FormGroup;
   constructor(private _formBuilder: FormBuilder) { }
 

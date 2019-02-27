@@ -1,6 +1,13 @@
-<p> Control Value Accessor </p>
+<b> Control Value Accessor Reactive </b>
 <form [formGroup]="reactiveForm">
-<app-cvaform formControlName="cva"></app-cvaform>
+<app-cvaform formControlName="cva" minlength="10"></app-cvaform>
 </form>
 <p> Value you are typed : {{reactiveForm.get('cva').value}}</p>
 <p> form valid or not:  {{reactiveForm.valid}}</p>
+
+<b> Control Value Accessor Template driven </b>
+<form #form="ngForm">
+<app-cvaform [(ngModel)]="cvaModel" minlength="10" name="cvaModel" #edit="ngModel"></app-cvaform>
+</form>
+<p> Value you are typed : {{cvaModel}}</p>
+<p>validation : {{edit.errors | json}}</p>

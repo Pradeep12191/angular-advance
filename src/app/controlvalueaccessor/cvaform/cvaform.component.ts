@@ -28,7 +28,7 @@ export class CvaformComponent implements OnInit, ControlValueAccessor {
     if (obj !== '') {
       const div = this.cvaId.nativeElement;
       this._renderer.setProperty(div, 'textContent', obj);
-      this.onChange = obj;
+      // this.onChange = obj;
     }
   }
   registerOnChange(fn: any): void {
