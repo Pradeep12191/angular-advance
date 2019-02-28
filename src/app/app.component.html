@@ -1,9 +1,16 @@
 <header>
-  <mat-toolbar class="mat-elevation-z6" color="primary">Advance Angular Topics</mat-toolbar>
+  <mat-toolbar fxLayout class="mat-elevation-z6" color="primary">
+    <div fxLayout="column" fxLayoutAlign="center center" (click)="sidenav.toggle()">
+      <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="caption">Advance Angular Topics</div>
+  </mat-toolbar>
 </header>
 
 <mat-sidenav-container>
-  <mat-sidenav class="mat-elevation-z2" mode="side" [opened]="true">
+  <mat-sidenav class="mat-elevation-z2" [opened]="openSideNav" #sidenav [mode]="isSmallDevice ? 'over' : 'side'">
     <mat-list role="list">
       <mat-list-item routerLinkActive="active" routerLink="/viewContainerReference" class="menu" role="listitem">View
         Container Reference</mat-list-item>
@@ -12,7 +19,8 @@
       <mat-list-item routerLinkActive="active" routerLink="/cdkOverlay" class="menu" role="listitem">CDK Overlay</mat-list-item>
       <mat-list-item class="menu" role="listitem">Structural Directive</mat-list-item>
       <mat-list-item class="menu" role="listitem">Angular Animation</mat-list-item>
-<mat-list-item class="menu"routerLinkActive="active" routerLink="/controlValueAccessor" role="listitem">Control Value Accessor</mat-list-item>
+      <mat-list-item class="menu" routerLinkActive="active" routerLink="/controlValueAccessor" role="listitem">Control
+        Value Accessor</mat-list-item>
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>

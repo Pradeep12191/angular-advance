@@ -31,6 +31,8 @@ import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
 import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlvalueaccessor.component';
 import { CvaformComponent } from './controlvalueaccessor/cvaform/cvaform.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatKeyboardModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
     // MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled

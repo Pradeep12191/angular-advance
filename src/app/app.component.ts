@@ -2,6 +2,7 @@ import {
   Component, AfterViewInit, ViewChild, ElementRef, OnInit, TemplateRef,
   ViewContainerRef
 } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
 
 import { animation, showTrigger } from './animation';
 import Inputmask from "inputmask";
@@ -37,13 +38,24 @@ export class AppComponent implements AfterViewInit, OnInit {
   e: any = 's';
   player: AnimationPlayer;
   private _quoteEl;
-
+  public isSmallDevice = false;
+  public openSideNav = true;
   constructor(
     // private snack: MatSnackBar
     private overlay: Overlay,
-    private builder: AnimationBuilder
+    private builder: AnimationBuilder,
+    public mediaObserver: MediaObserver
   ) {
-
+    this.mediaObserver.media$.subscribe((media) => {
+      console.log('media alias', media);
+      if (media.mqAlias === 'xs') {
+        this.isSmallDevice = true;
+        this.openSideNav = false;
+      } else {
+        this.isSmallDevice = false;
+        this.openSideNav = true;
+      }
+    });
   }
 
 
