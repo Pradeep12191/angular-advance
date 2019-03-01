@@ -31,6 +31,8 @@ import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
 import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlvalueaccessor.component';
 import { CvaformComponent } from './controlvalueaccessor/cvaform/cvaform.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MxMaskModule } from './mx-mask-input';
+import { InputEventDirective } from './mx-mask-input/input-event.directive';
 @NgModule({
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatKeyboardModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MxMaskModule.forRoot()
     // MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -64,7 +67,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     VirtualKeypadComponent,
     CdkOverlayComponent,
     ControlvalueaccessorComponent,
-    CvaformComponent
+    CvaformComponent,
+    InputEventDirective
   ],
   providers: [],
   bootstrap: [AppComponent],
