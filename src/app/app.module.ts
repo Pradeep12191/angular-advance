@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { DynamicComponent } from './view-container-ref-demo/dynamic/dynamic.component';
 import { ViewContainerRefDemoComponent } from './view-container-ref-demo/view-container-ref-demo.component';
 import { TestDirective } from './strur.directive';
-import { RepeatDirective } from './repeat.directive';
+import { RepeatDirective } from './strutural-directive/directives/repeat/repeat.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CardComponent } from './card/card.component';
@@ -75,7 +75,8 @@ import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
     CvaformComponent,
     InputEventDirective,
     StruturalDirectiveComponent,
-    SimpleIfDirective
+    SimpleIfDirective,
+    RepeatDirective
   ],
   providers: [],
   bootstrap: [AppComponent],
