@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class StruturalDirectiveComponent implements OnInit {
 
   show = false;
+  showTemplate = false;
   constructor() { }
 
   ngOnInit() {
