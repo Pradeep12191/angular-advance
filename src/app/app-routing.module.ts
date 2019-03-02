@@ -4,6 +4,7 @@ import { VirtualKeypadComponent } from './virtual-keypad/virtual-keypad.componen
 import { ViewContainerRefDemoComponent } from './view-container-ref-demo/view-container-ref-demo.component';
 import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
 import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlvalueaccessor.component';
+import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/virtualKeypad' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'cdkOverlay', component: CdkOverlayComponent },
   { path: 'virtualKeypad', component: VirtualKeypadComponent },
   { path: 'controlValueAccessor', component: ControlvalueaccessorComponent },
+  { path: 'structuralDirective', component: StruturalDirectiveComponent },
 ];
 
 @NgModule({

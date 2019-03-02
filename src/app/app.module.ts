@@ -35,6 +35,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MxMaskModule } from './mx-mask-input';
 import { InputEventDirective } from './mx-mask-input/input-event.directive';
+import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
+import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
 @NgModule({
   imports: [
     BrowserModule,
@@ -71,7 +73,9 @@ import { InputEventDirective } from './mx-mask-input/input-event.directive';
     CdkOverlayComponent,
     ControlvalueaccessorComponent,
     CvaformComponent,
-    InputEventDirective
+    InputEventDirective,
+    StruturalDirectiveComponent,
+    SimpleIfDirective
   ],
   providers: [],
   bootstrap: [AppComponent],
