@@ -33,6 +33,7 @@ import { CvaformComponent } from './controlvalueaccessor/cvaform/cvaform.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { CdkDirective } from './cdk-overlay/cdk.directive';
 @NgModule({
   imports: [
     BrowserModule,
@@ -48,7 +49,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatKeyboardModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    OverlayModule
     // MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -67,11 +69,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     VirtualKeypadComponent,
     CdkOverlayComponent,
     ControlvalueaccessorComponent,
-    CvaformComponent
+    CvaformComponent,
+    LoaderComponent, // it is a dynamic component as well as portal,
+    CdkDirective
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CardComponent, DynamicComponent]
+  entryComponents: [CardComponent, DynamicComponent, LoaderComponent]
 })
 
 export class AppModule { }
