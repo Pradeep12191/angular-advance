@@ -32,7 +32,7 @@ import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlval
 import { CvaformComponent } from './controlvalueaccessor/cvaform/cvaform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { LoaderComponent } from './cdk-overlay/loader/loader.component';
 import { CdkDirective } from './cdk-overlay/cdk.directive';
 @NgModule({
   imports: [
