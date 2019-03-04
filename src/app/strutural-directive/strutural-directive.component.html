@@ -1,0 +1,98 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Simple If structural directive
+    </mat-card-title>
+    <mat-card-subtitle>
+      using as *syntax sugar
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *appSimpleIf="show; else falseRef">
+      On true condtion
+    </div>
+    <ng-template #falseRef>
+      <div>
+        On false condition
+      </div>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button color="primary" mat-raised-button (click)="show = !show">Toggle condition</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      This is a simple If structural directive
+    </mat-card-title>
+    <mat-card-subtitle>
+      using as ngTemplate
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <ng-template [appSimpleIf]="showTemplate" [appSimpleIfElse]="elseRef">
+      <div>
+        On true condtion
+      </div>
+    </ng-template>
+    <ng-template #elseRef>
+      <div>
+        On false condition
+      </div>
+    </ng-template>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button color="primary" mat-raised-button (click)="showTemplate = !showTemplate">Toggle condition</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Simple Repeat directive</mat-card-title>
+    <mat-card-subtitle>using *syntax sugar</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="table" fxLayout *appRepeat="let employee in employees; let i = index; let o = odd; let e = even; let f = first; let l = last">
+      <div> Hello {{employee.name}}</div>
+      <div> first: {{f}}</div>
+      <div> index: {{i}}</div>
+      <div> odd: {{o}}</div>
+      <div> even: {{e}}</div>
+      <div> last: {{l}}</div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Simple Repeat directive</mat-card-title>
+      <mat-card-subtitle>using ngTemplate</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-template 
+        let-i="index" 
+        let-o="odd" 
+        let-e="even" 
+        let-l="last" 
+        let-f="first" 
+        let-employee 
+        [appRepeat]
+        [appRepeatIn]="employees">
+        <div fxLayout class="table">
+            <div> Hello {{employee.name}}</div>
+            <div> first: {{f}}</div>
+            <div> index: {{i}}</div>
+            <div> odd: {{o}}</div>
+            <div> even: {{e}}</div>
+            <div> last: {{l}}</div>
+        </div>
+
+      </ng-template>
+    </mat-card-content>
+  </mat-card>

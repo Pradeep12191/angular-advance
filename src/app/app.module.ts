@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { DynamicComponent } from './view-container-ref-demo/dynamic/dynamic.component';
 import { ViewContainerRefDemoComponent } from './view-container-ref-demo/view-container-ref-demo.component';
 import { TestDirective } from './strur.directive';
-import { RepeatDirective } from './repeat.directive';
+import { RepeatDirective } from './strutural-directive/directives/repeat/repeat.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CardComponent } from './card/card.component';
@@ -34,6 +34,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoaderComponent } from './cdk-overlay/loader/loader.component';
 import { CdkDirective } from './cdk-overlay/cdk.directive';
+
+import { MxMaskModule } from './mx-mask-input';
+import { InputEventDirective } from './mx-mask-input/input-event.directive';
+import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
+import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
 @NgModule({
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ import { CdkDirective } from './cdk-overlay/cdk.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    OverlayModule
+    OverlayModule,
+    MxMaskModule.forRoot()
     // MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -71,7 +77,11 @@ import { CdkDirective } from './cdk-overlay/cdk.directive';
     ControlvalueaccessorComponent,
     CvaformComponent,
     LoaderComponent, // it is a dynamic component as well as portal,
-    CdkDirective
+    CdkDirective,
+    InputEventDirective,
+    StruturalDirectiveComponent,
+    SimpleIfDirective,
+    RepeatDirective
   ],
   providers: [],
   bootstrap: [AppComponent],
