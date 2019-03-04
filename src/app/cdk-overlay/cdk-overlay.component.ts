@@ -11,28 +11,27 @@ import { CdkDirective } from './cdk.directive';
   styleUrls: ['./cdk-overlay.component.css']
 })
 export class CdkOverlayComponent implements OnInit {
-  @ViewChild(CdkDirective) cdkDirective: ElementRef;
   constructor(
     private overlay: Overlay
   ) { }
 
   ngOnInit() {
-    console.log(CdkDirective);
-    const position = this.overlay.position().connectedTo(this.cdkDirective, { originX: 'center', originY: 'center' },
-      { overlayX: 'start', overlayY: 'top' });
-    const scroll = this.overlay.scrollStrategies.block();
-    const overlayRef = this.overlay.create({
-      width: 100, height: 100,
-      hasBackdrop: true, // default backdrop if this need dont use backdropClass
-      // backdropClass: 'dark-backdrop', //  use backdropClass to show different color in backdrop
-      panelClass: 'tm-file-preview-dialog-panel',
-      positionStrategy: position,
-      scrollStrategy: scroll
-    });
-    const userProfilePortal = new ComponentPortal(LoaderComponent);
-    setTimeout(() => {
-      overlayRef.attach(userProfilePortal);
-    })
+    // console.log(CdkDirective);
+    // const position = this.overlay.position().connectedTo(this.cdkDirective, { originX: 'center', originY: 'center' },
+    //   { overlayX: 'start', overlayY: 'top' });
+    // const scroll = this.overlay.scrollStrategies.block();
+    // const overlayRef = this.overlay.create({
+    //   width: 100, height: 100,
+    //   hasBackdrop: true, // default backdrop if this need dont use backdropClass
+    //   // backdropClass: 'dark-backdrop', //  use backdropClass to show different color in backdrop
+    //   panelClass: 'tm-file-preview-dialog-panel',
+    //   positionStrategy: position,
+    //   scrollStrategy: scroll
+    // });
+    // const userProfilePortal = new ComponentPortal(LoaderComponent);
+    // setTimeout(() => {
+    //   overlayRef.attach(userProfilePortal);
+    // })
   }
 
 }

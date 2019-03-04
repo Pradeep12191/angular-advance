@@ -40,7 +40,9 @@
     border: 1px solid black;
     padding: 10px
   }
-
+::ng-deep .dark-backdrop .cdk-overlay-connected-position-bounding-box {
+background: #ccc;
+}
 
   mat-sidenav-container{
     height: calc(100% - 64px);
