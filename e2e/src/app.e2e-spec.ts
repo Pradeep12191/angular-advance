@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { element, by, browser } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -7,8 +8,10 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should navigate to view container reference', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to angular-animation!');
+    const listBtn = element(by.css('#view-container-reference'));
+    listBtn.click();
+    expect(browser.getCurrentUrl()).toContain('viewContainer');
   });
 });

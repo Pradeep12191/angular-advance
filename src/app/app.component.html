@@ -12,12 +12,13 @@
 <mat-sidenav-container>
   <mat-sidenav class="mat-elevation-z2" [opened]="openSideNav" #sidenav [mode]="isSmallDevice ? 'over' : 'side'">
     <mat-list role="list">
-      <mat-list-item routerLinkActive="active" routerLink="/viewContainerReference" class="menu" role="listitem">View
+      <mat-list-item id="view-container-reference" routerLinkActive="active" routerLink="/viewContainerReference" class="menu" role="listitem">View
         Container Reference</mat-list-item>
       <mat-list-item class="menu" role="listitem">OnPush ChangeDetection</mat-list-item>
       <mat-list-item class="menu" role="listitem">Animation Builder</mat-list-item>
       <mat-list-item routerLinkActive="active" routerLink="/cdkOverlay" class="menu" role="listitem">CDK Overlay</mat-list-item>
       <mat-list-item routerLinkActive="active" routerLink="/structuralDirective" class="menu" role="listitem">Structural Directive</mat-list-item>
+      <mat-list-item class="menu" role="listitem">Angular Animation</mat-list-item>
       <mat-list-item class="menu" role="listitem">Angular Animation</mat-list-item>
       <mat-list-item class="menu" routerLinkActive="active" routerLink="/controlValueAccessor" role="listitem">Control
         Value Accessor</mat-list-item>
