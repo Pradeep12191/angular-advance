@@ -41,6 +41,7 @@ import { StruturalDirectiveComponent } from './strutural-directive/strutural-dir
 import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
 import { CardsComponent } from './cards/cards.component';
 import { MultiplecardComponent } from './cards/multiplecard/multiplecard.component';
+import { InlineTableComponent } from './inline-table/inline-table.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -86,7 +87,8 @@ import { MultiplecardComponent } from './cards/multiplecard/multiplecard.compone
     SimpleIfDirective,
     RepeatDirective,
     CardsComponent,
-    MultiplecardComponent
+    MultiplecardComponent,
+    InlineTableComponent
   ],
   providers: [],
   bootstrap: [

@@ -1,20 +1,13 @@
-<!-- <ng-container *ngFor="let datas of carddata">
-  <div *ngIf="data.type === 'listcard'">
-    list
-  </div>
-<div *ngIf="data.type !== 'imagecard'">
-<div *ngFor="let datas of carddata">
-
-</div>
-</div>
-</ng-container> -->
 <mat-card *ngIf="data.ty === 'listcard'">
 list
 </mat-card>
 <mat-card *ngIf="data.ty === 'imagecard'">
-<button mat-button (click)="toggleHandler()">details</button>
+<button mat-raised-button color="accent" (click)="toggleHandler()">details</button>
 </mat-card>
 <mat-card *ngIf="data.ty === 'detailscard'">
-  <button mat-button (click)="toggleHandler()">image</button>
+  <button mat-raised-button color="accent" (click)="toggleHandler()">image</button>
+</mat-card>
+<mat-card *ngIf="data.ty === 'infocard'">
+  <button mat-raised-button color="accent" (click)="toggleHandler()">info</button>
 </mat-card>
 

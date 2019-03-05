@@ -6,6 +6,7 @@ import { CdkOverlayComponent } from './cdk-overlay/cdk-overlay.component';
 import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlvalueaccessor.component';
 import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
 import { CardsComponent } from './cards/cards.component';
+import { InlineTableComponent } from './inline-table/inline-table.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/cards' },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'controlValueAccessor', component: ControlvalueaccessorComponent },
   { path: 'structuralDirective', component: StruturalDirectiveComponent },
   { path: 'cards', component: CardsComponent },
+  { path: 'inlineTable', component: InlineTableComponent },
 ];
 
 @NgModule({

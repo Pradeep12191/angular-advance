@@ -1,0 +1,31 @@
+<table class="table" [formGroup]="form">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <!-- <th>Last Name</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Department</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr (click)="edit(employeeForm)" formArrayName="employees" *ngFor="let employeeForm of employeeFormArray.controls">
+      <ng-container [formGroup]="employeeForm">
+        <td>
+          <ng-container *ngIf="employeeForm.get('isEdit').value; else display">
+            <div class="form-group">
+              <input class="form-control" formControlName="first_name" type="text">
+            </div>
+          </ng-container>
+          <ng-template #display>
+            {{ employeeForm.get('first_name').value }}
+          </ng-template>
+        </td>
+        <!-- <td>{{ employeeForm.get('last_name').value }}</td>
+          <td>{{ employeeForm.get('email').value  }}</td>
+          <td>{{ employeeForm.get('gender').value }}</td>
+          <td>{{ employeeForm.get('department').value }}</td> -->
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
