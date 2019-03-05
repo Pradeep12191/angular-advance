@@ -39,6 +39,8 @@ import { MxMaskModule } from './mx-mask-input';
 import { InputEventDirective } from './mx-mask-input/input-event.directive';
 import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
 import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
+import { CardsComponent } from './cards/cards.component';
+import { MultiplecardComponent } from './cards/multiplecard/multiplecard.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -56,12 +58,12 @@ import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
     ReactiveFormsModule,
     FlexLayoutModule,
     OverlayModule,
-    MxMaskModule.forRoot()
-    // MatSnackBarModule,
+    MxMaskModule.forRoot()// MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
   ],
-  declarations: [AppComponent,
+  declarations: [
+    AppComponent,
     DynamicComponent,
     ViewContainerRefDemoComponent,
     TestDirective,
@@ -76,16 +78,25 @@ import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
     CdkOverlayComponent,
     ControlvalueaccessorComponent,
     CvaformComponent,
-    LoaderComponent, // it is a dynamic component as well as portal,
+    LoaderComponent,
+    // itisadynamiccomponentaswellasportal,
     CdkDirective,
     InputEventDirective,
     StruturalDirectiveComponent,
     SimpleIfDirective,
-    RepeatDirective
+    RepeatDirective,
+    CardsComponent,
+    MultiplecardComponent
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [CardComponent, DynamicComponent, LoaderComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  entryComponents: [
+    CardComponent,
+    DynamicComponent,
+    LoaderComponent
+  ]
 })
 
 export class AppModule { }

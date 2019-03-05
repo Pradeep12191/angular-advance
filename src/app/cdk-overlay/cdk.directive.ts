@@ -30,7 +30,7 @@ export class CdkDirective implements OnInit {
     const userProfilePortal = new ComponentPortal(LoaderComponent);
     setTimeout(() => {
       overlayRef.attach(userProfilePortal);
-    })
+    });
   }
 
 }
