@@ -1,27 +1,44 @@
-<mat-card *ngIf="visibleCard.ty === 'imagecard'">
-  <mat-card-header>
-    <mat-card-title>
-      <div>{{visibleCard.header}}</div>
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content fxLayout fxLayoutAlign="center center">
-    <mat-icon>face</mat-icon>
-  </mat-card-content>
-  <mat-card-actions fxLayout fxLayoutAlign="center center">
-    <button mat-raised-button color="accent" (click)="toggleCard()">details</button>
-  </mat-card-actions>
-</mat-card>
+<div class="flip-card">
+  <div class="flip-card__inner" [@rotateState]="direction">
+    <div class="flip-card__front">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title fxLayout fxLayoutAlign="center center">
+            <div>{{frontCard.header}}</div>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout fxLayoutAlign="center center">
+          <mat-icon>face</mat-icon>
+        </mat-card-content>
+        <mat-card-actions fxLayout fxLayoutAlign="center center">
+          <button mat-raised-button color="accent" (click)="rotate('back')">Know your RM</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
 
-<mat-card *ngIf="visibleCard.ty === 'detailscard'">
-    <mat-card-header>
-      <mat-card-title>
-        <div>{{visibleCard.header}}</div>
-      </mat-card-title>
-    </mat-card-header>
-    <mat-card-content fxLayout fxLayoutAlign="center center">
-      <mat-icon>face</mat-icon>
-    </mat-card-content>
-    <mat-card-actions fxLayout fxLayoutAlign="center center">
-      <button mat-raised-button color="accent" (click)="toggleCard()">details</button>
-    </mat-card-actions>
-  </mat-card>
+    <div class="flip-card__back">
+      <mat-card fxLayout="column" fxLayoutAlign="space-between">
+        <mat-card-header fxLayout fxLayoutAlign="center center">
+          <mat-card-title>
+            <div>{{backCard.header}}</div>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content fxLayout fxLayoutAlign="center center">
+          <table class="details-table">
+            <tbody>
+              <tr *ngFor="let detail of backCard.list">
+                <td>{{detail.label}}</td>
+                <td>{{detail.value}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </mat-card-content>
+        <mat-card-actions fxLayout fxLayoutAlign="center center">
+          <button (click)="rotate('front')" mat-raised-button color="accent">Ok</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+
+</div>
