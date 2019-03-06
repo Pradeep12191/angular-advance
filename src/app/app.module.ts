@@ -42,6 +42,7 @@ import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
 import { CardsComponent } from './cards/cards.component';
 import { MultiplecardComponent } from './cards/multiplecard/multiplecard.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
+import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -88,7 +89,8 @@ import { InlineTableComponent } from './inline-table/inline-table.component';
     RepeatDirective,
     CardsComponent,
     MultiplecardComponent,
-    InlineTableComponent
+    InlineTableComponent,
+    InlineMatTableComponent
   ],
   providers: [],
   bootstrap: [

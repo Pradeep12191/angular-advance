@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "first_name": "Adele",
+        "last_name": "Jeffers",
+        "email": "ajeffers0@nature.com",
+        "gender": "Female",
+        "department": "Human Resources"
+    },
+    {
+        "id": 2,
+        "first_name": "Torrin",
+        "last_name": "Doley",
+        "email": "tdoley1@baidu.com",
+        "gender": "Male",
+        "department": "Accounting"
+    },
+    {
+        "id": 3,
+        "first_name": "Melany",
+        "last_name": "Breeton",
+        "email": "mbreeton2@hatena.ne.jp",
+        "gender": "Female",
+        "department": "Business Development"
+    },
+    {
+        "id": 4,
+        "first_name": "Layney",
+        "last_name": "Heningam",
+        "email": "lheningam3@delicious.com",
+        "gender": "Female",
+        "department": "Sales"
+    },
+    {
+        "id": 5,
+        "first_name": "Lurette",
+        "last_name": "Thomkins",
+        "email": "lthomkins4@alibaba.com",
+        "gender": "Female",
+        "department": "Engineering"
+    },
+    {
+        "id": 6,
+        "first_name": "Joan",
+        "last_name": "Kennifeck",
+        "email": "jkennifeck5@delicious.com",
+        "gender": "Female",
+        "department": "Services"
+    },
+    {
+        "id": 7,
+        "first_name": "Gipsy",
+        "last_name": "Ferrieri",
+        "email": "gferrieri6@wordpress.com",
+        "gender": "Female",
+        "department": "Marketing"
+    },
+    {
+        "id": 8,
+        "first_name": "Cobb",
+        "last_name": "Lomen",
+        "email": "clomen7@blogtalkradio.com",
+        "gender": "Male",
+        "department": "Support"
+    },
+    {
+        "id": 9,
+        "first_name": "Tonnie",
+        "last_name": "Fold",
+        "email": "tfold8@nhs.uk",
+        "gender": "Male",
+        "department": "Marketing"
+    },
+    {
+        "id": 10,
+        "first_name": "Isaac",
+        "last_name": "Heaney",
+        "email": "iheaney9@privacy.gov.au",
+        "gender": "Male",
+        "department": "Services"
+    }
+]

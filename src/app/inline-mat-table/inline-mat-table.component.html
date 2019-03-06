@@ -1,0 +1,76 @@
+<ng-container [formGroup]="form">
+  <table mat-table formArrayName="employee" [dataSource]="employeeDataSource">
+    <ng-container matColumnDef="first_name">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let ctrl" [formGroup]="ctrl">
+        <ng-container *ngIf="ctrl.get('isEdit').value; else display">
+          <mat-form-field>
+            <input type="text" matInput formControlName="first_name">
+          </mat-form-field>
+        </ng-container>
+        <ng-template #display>
+          {{ctrl.get('first_name').value}}
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="last_name">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let ctrl" [formGroup]="ctrl">
+        <ng-container *ngIf="ctrl.get('isEdit').value; else display">
+          <mat-form-field>
+            <input type="text" matInput formControlName="last_name">
+          </mat-form-field>
+        </ng-container>
+        <ng-template #display>
+          {{ctrl.get('last_name').value}}
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let ctrl" [formGroup]="ctrl">
+        <ng-container *ngIf="ctrl.get('isEdit').value; else display">
+          <mat-form-field>
+            <input type="text" matInput formControlName="email">
+          </mat-form-field>
+        </ng-container>
+        <ng-template #display>
+          {{ctrl.get('email').value}}
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender </th>
+      <td mat-cell *matCellDef="let ctrl" [formGroup]="ctrl">
+        <ng-container *ngIf="ctrl.get('isEdit').value; else display">
+          <mat-form-field>
+            <mat-select formControlName="gender" placeHolder="Select Gender">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+        <ng-template #display>
+          {{ctrl.get('gender').value}}
+        </ng-template>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef> Department </th>
+      <td mat-cell *matCellDef="let ctrl" [formGroup]="ctrl">
+        <ng-container *ngIf="ctrl.get('isEdit').value; else display">
+          <mat-form-field>
+            <mat-select formControlName="department" placeHolder="select department">
+              <mat-option [value]="department" *ngFor="let department of departments">{{ department }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-container>
+        <ng-template #display>
+          {{ctrl.get('department').value}}
+        </ng-template>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr (click)="editRow(ctrl)" mat-row *matRowDef="let ctrl; columns: displayedColumns;"></tr>
+  </table>
+</ng-container>

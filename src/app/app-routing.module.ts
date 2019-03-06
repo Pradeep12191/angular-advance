@@ -7,6 +7,7 @@ import { ControlvalueaccessorComponent } from './controlvalueaccessor/controlval
 import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
 import { CardsComponent } from './cards/cards.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
+import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/cards' },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'structuralDirective', component: StruturalDirectiveComponent },
   { path: 'cards', component: CardsComponent },
   { path: 'inlineTable', component: InlineTableComponent },
+  { path: 'inlineMatTable', component: InlineMatTableComponent },
 ];
 
 @NgModule({
