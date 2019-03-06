@@ -6,18 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./multiplecard.component.scss']
 })
 export class MultiplecardComponent implements OnInit {
-  @Input() carddata;
-  data = '';
-  i = 0;
-  constructor() { }
+  public visibleCard;
+  @Input() card;
 
   ngOnInit() {
-    console.log(this.carddata);
-    this.data = this.carddata[this.i];
+    this.visibleCard = this.card['front_face_card'];
   }
-  toggleHandler() {
-    this.i = (this.i === 0 ) ? 1 : 0;
-    console.log(this.i);
-    this.data = this.carddata[this.i];
+
+  toggleCard() {
+    
   }
 }
