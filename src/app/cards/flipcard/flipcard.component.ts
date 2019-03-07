@@ -8,7 +8,7 @@ const rotate = trigger('rotateState', [
   state('back', style({
     transform: 'rotateY(180deg)'
   })),
-  transition('front => back', animate(500)),
+  transition('front => back', animate('500ms linear')),
   transition('back => front', animate(500))
 ]);
 
@@ -21,7 +21,7 @@ const rotate = trigger('rotateState', [
 export class FlipcardComponent implements OnInit {
   public frontCard;
   public backCard;
-  public direction: 'front' | 'back';
+  public direction: 'front' | 'back' = 'front';
   @Input() card;
 
   ngOnInit() {
