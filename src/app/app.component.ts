@@ -15,6 +15,7 @@ import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { CardComponent } from './card/card.component';
 import { AnimationBuilder, style, animate, AnimationPlayer, AnimationMetadata } from '@angular/animations';
+import { AppService } from './services/app.service';
 
 const anim = [];
 
@@ -40,11 +41,13 @@ export class AppComponent implements AfterViewInit, OnInit {
   private _quoteEl;
   public isSmallDevice = false;
   public openSideNav = true;
+  public stickyClass$;
   constructor(
     // private snack: MatSnackBar
     private overlay: Overlay,
     private builder: AnimationBuilder,
-    public mediaObserver: MediaObserver
+    public mediaObserver: MediaObserver,
+    private appService: AppService
   ) {
     this.mediaObserver.media$.subscribe((media) => {
       console.log('media alias', media);
@@ -76,25 +79,7 @@ export class AppComponent implements AfterViewInit, OnInit {
   // }
 
   ngOnInit() {
-
-    // tslint:disable-next-line:no-non-null-assertion
-    console.log(this.e.name);
-
-    // const overlayRef = Overlay.create();
-    // const cardPortal = new ComponentPortal(CardComponent);
-    // overlayRef.attach(cardPortal);
-
-    // this.ip.valueChanges.subscribe((newVal) => {
-    //   console.log(newVal);
-    // });
-    // this.snack.open('hello', 'asd');
-    // console.log(moment.parseZone('2018-11-14T00:00:00+08:00').utcOffset());
-    // console.log(moment('2018-11-14T00:00:00+08:00').utcOffset('2018-11-14T00:00:00+08:00').day());
-    // const m = moment('2018-11-14T00:00:00+08:00');
-    // console.log(moment(m).utc().add(m.utcOffset(), 'm').format('DD MM YYYY'));
-    //  console.log(new Date('2018-11-14T00:00:00+08:00').toLocaleString());
-
-
+   this.stickyClass$ = this.appService.stickyClassObs();
   }
 
   public ngAfterViewInit() {

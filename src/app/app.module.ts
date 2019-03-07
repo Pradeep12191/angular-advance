@@ -46,6 +46,7 @@ import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.com
 import { DynamicFormComponent } from './dynamic-form-demo/dynamic-form/dynamic-form.component';
 import { DynamicInputComponent } from './dynamic-form-demo/dynamic-form/dynamic-input/dynamic-input.component';
 import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
+import { AppService } from './services/app.service';
 @NgModule({
   imports: [
     BrowserModule,
@@ -98,7 +99,7 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
     DynamicInputComponent,
     DynamicFormDemoComponent
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [
     AppComponent
   ],

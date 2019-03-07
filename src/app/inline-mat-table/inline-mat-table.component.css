@@ -1,3 +1,20 @@
 table{
     width: 100%;
 }
+
+.sticky-action{
+    height: 100px;
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.sticky{
+    /* position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 240px; */
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { AppService } from '../services/app.service';
 
 const data = require('./data.json');
 
@@ -11,7 +12,7 @@ declare var require;
   templateUrl: './inline-mat-table.component.html',
   styleUrls: ['./inline-mat-table.component.css']
 })
-export class InlineMatTableComponent implements OnInit {
+export class InlineMatTableComponent implements OnInit, OnDestroy {
   public employeeDataSource: MatTableDataSource<any>;
   public columns;
   public displayedColumns;
@@ -19,7 +20,8 @@ export class InlineMatTableComponent implements OnInit {
   public employees: any[];
   public departments: any[];
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private appService: AppService
   ) { }
 
   public get employeeFormArray() {
@@ -27,6 +29,7 @@ export class InlineMatTableComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appService.setStickyClass('sticky-footer');
     this.employees = data;
     this.departments = [
       'Accounting', 'Business Development', 'Human Resources', 'Marketing',
@@ -43,6 +46,10 @@ export class InlineMatTableComponent implements OnInit {
     // this.displayedColumns = ['first_name', 'last_name', 'email', 'gender', 'department'];
     this.displayedColumns = ['first_name', 'last_name', 'email', 'gender', 'department'];
     this.initForm();
+  }
+
+  ngOnDestroy() {
+    this.appService.setStickyClass('');
   }
 
   initForm() {

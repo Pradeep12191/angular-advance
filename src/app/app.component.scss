@@ -56,16 +56,22 @@ background: #ccc;
   .menu{
     &:hover{
       background: #eee;
+      border-left: 7px solid #3f51b5; 
+    }
+    &.active{
+      background: #eee;
+      border-left: 7px solid #3f51b5; 
     }
     cursor: pointer;
+    transition: linear all 200ms
   }
 
   mat-sidenav-content{
     padding: 10px;
   }
 
-  .active{
-    background: #eee;
+  mat-list-item{
+
   }
 
   mat-toolbar{
@@ -75,4 +81,8 @@ background: #ccc;
 
   .caption{
     margin-left: 10px;
+  }
+
+  .sticky-footer{
+    height: calc(100% - 64px);
   }

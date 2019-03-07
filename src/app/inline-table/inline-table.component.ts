@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
+import { Router, NavigationStart } from '@angular/router';
+import { AppService } from '../services/app.service';
 
 const employees = require('./data.json');
 declare var require;
@@ -9,7 +11,7 @@ declare var require;
   templateUrl: './inline-table.component.html',
   styleUrls: ['./inline-table.component.css']
 })
-export class InlineTableComponent implements OnInit {
+export class InlineTableComponent implements OnInit, OnDestroy {
 
   public employees: any[];
   public form: FormGroup;
@@ -19,12 +21,19 @@ export class InlineTableComponent implements OnInit {
   }
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private appService: AppService
   ) { }
 
   ngOnInit() {
+    // this.appService.setStickyClass('sticky-footer');
     this.employees = employees;
     this.initForm();
+  }
+
+  ngOnDestroy() {
+    // this.appService.setStickyClass('');
   }
 
 
