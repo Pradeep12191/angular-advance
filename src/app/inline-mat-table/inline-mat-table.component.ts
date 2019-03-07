@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatTable } from '@angular/material';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { AppService } from '../services/app.service';
 
@@ -19,6 +19,7 @@ export class InlineMatTableComponent implements OnInit, OnDestroy {
   public form: FormGroup;
   public employees: any[];
   public departments: any[];
+  public data: MatTable<any>;
   constructor(
     private fb: FormBuilder,
     private appService: AppService
@@ -78,6 +79,19 @@ export class InlineMatTableComponent implements OnInit, OnDestroy {
     this.employeeFormArray.controls.forEach((ctrl) => {
       ctrl.get('isEdit').setValue(false);
     });
+  }
+
+  addEmployee() {
+    this.displayAll();
+    this.employeeFormArray.push(this.fb.group({
+      first_name: '',
+      last_name: '',
+      email: '',
+      gender: '',
+      department: '',
+      isEdit: true
+    }));
+    this.employeeDataSource = new MatTableDataSource<any>(this.employeeFormArray.controls);
   }
 
 }
