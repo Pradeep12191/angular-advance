@@ -40,7 +40,7 @@ import { InputEventDirective } from './mx-mask-input/input-event.directive';
 import { StruturalDirectiveComponent } from './strutural-directive/strutural-directive.component';
 import { SimpleIfDirective } from './strutural-directive/simple-if.directive';
 import { CardsComponent } from './cards/cards.component';
-import { MultiplecardComponent } from './cards/multiplecard/multiplecard.component';
+import { FlipcardComponent } from './cards/flipcard/flipcard.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
 import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
 import { DynamicFormComponent } from './dynamic-form-demo/dynamic-form/dynamic-form.component';
@@ -91,7 +91,7 @@ import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.
     SimpleIfDirective,
     RepeatDirective,
     CardsComponent,
-    MultiplecardComponent,
+    FlipcardComponent,
     InlineTableComponent,
     InlineMatTableComponent,
     DynamicFormComponent,

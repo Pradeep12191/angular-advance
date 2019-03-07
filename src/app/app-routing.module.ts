@@ -11,7 +11,7 @@ import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.com
 import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/cards' },
+  { path: '', pathMatch: 'full', redirectTo: '/flipCards' },
   { path: 'virtualKeypad', component: VirtualKeypadComponent },
   { path: 'viewContainerReference', component: ViewContainerRefDemoComponent },
   { path: 'onPushStrategy', component: VirtualKeypadComponent },
@@ -19,10 +19,10 @@ const routes: Routes = [
   { path: 'virtualKeypad', component: VirtualKeypadComponent },
   { path: 'controlValueAccessor', component: ControlvalueaccessorComponent },
   { path: 'structuralDirective', component: StruturalDirectiveComponent },
-  { path: 'cards', component: CardsComponent },
   { path: 'inlineTable', component: InlineTableComponent },
   { path: 'inlineMatTable', component: InlineMatTableComponent },
   { path: 'dynamicForm', component: DynamicFormDemoComponent },
+  { path: 'flipCards', component: CardsComponent },
 ];
 
 @NgModule({

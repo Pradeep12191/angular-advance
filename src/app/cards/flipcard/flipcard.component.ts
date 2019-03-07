@@ -13,12 +13,12 @@ const rotate = trigger('rotateState', [
 ]);
 
 @Component({
-  selector: 'app-multiplecard',
-  templateUrl: './multiplecard.component.html',
-  styleUrls: ['./multiplecard.component.scss'],
+  selector: 'app-flipcard',
+  templateUrl: './flipcard.component.html',
+  styleUrls: ['./flipcard.component.scss'],
   animations: [rotate]
 })
-export class MultiplecardComponent implements OnInit {
+export class FlipcardComponent implements OnInit {
   public frontCard;
   public backCard;
   public direction: 'front' | 'back';
