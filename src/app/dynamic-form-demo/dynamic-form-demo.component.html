@@ -1,0 +1,7 @@
+
+
+<div [formGroup]="form">
+  <app-dynamic-form [config]="controlsConfig" [form]="form.get('dynamicControls')"></app-dynamic-form>
+</div>
+
+<button mat-button (click)="logFormData()">Submit</button>

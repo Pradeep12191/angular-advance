@@ -43,6 +43,9 @@ import { CardsComponent } from './cards/cards.component';
 import { MultiplecardComponent } from './cards/multiplecard/multiplecard.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
 import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
+import { DynamicFormComponent } from './dynamic-form-demo/dynamic-form/dynamic-form.component';
+import { DynamicInputComponent } from './dynamic-form-demo/dynamic-form/dynamic-input/dynamic-input.component';
+import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -90,7 +93,10 @@ import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.com
     CardsComponent,
     MultiplecardComponent,
     InlineTableComponent,
-    InlineMatTableComponent
+    InlineMatTableComponent,
+    DynamicFormComponent,
+    DynamicInputComponent,
+    DynamicFormDemoComponent
   ],
   providers: [],
   bootstrap: [
@@ -99,7 +105,8 @@ import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.com
   entryComponents: [
     CardComponent,
     DynamicComponent,
-    LoaderComponent
+    LoaderComponent,
+    DynamicInputComponent
   ]
 })
 

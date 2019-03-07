@@ -1,0 +1,7 @@
+[
+    {
+        "ty": "input",
+        "ctrlName": "name",
+        "defaultValue" :"Pradeep"
+    }
+]

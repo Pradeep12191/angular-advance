@@ -8,6 +8,7 @@ import { StruturalDirectiveComponent } from './strutural-directive/strutural-dir
 import { CardsComponent } from './cards/cards.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
 import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
+import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/cards' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'cards', component: CardsComponent },
   { path: 'inlineTable', component: InlineTableComponent },
   { path: 'inlineMatTable', component: InlineMatTableComponent },
+  { path: 'dynamicForm', component: DynamicFormDemoComponent },
 ];
 
 @NgModule({
