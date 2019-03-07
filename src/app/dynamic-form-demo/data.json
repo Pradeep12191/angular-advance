@@ -1,7 +1,12 @@
 [
     {
         "ty": "input",
-        "ctrlName": "name",
+        "ctrlName": "first_name",
         "defaultValue" :"Pradeep"
+    },
+    {
+        "ty": "input",
+        "ctrlName": "last_name",
+        "defaultValue" :"Siva"
     }
 ]

@@ -22,7 +22,7 @@ export class DynamicFormDemoComponent implements OnInit {
   ngOnInit() {
     this.controlsConfig = data;
     this.form = this.fb.group({
-      dynamicControls: this.dynamicFormGroup()
+      dynamicControls: this.generateDynamicFormGroup()
     });
   }
 
@@ -30,12 +30,12 @@ export class DynamicFormDemoComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  private dynamicFormGroup() {
-    const group = [];
+  private generateDynamicFormGroup() {
+    const group = this.fb.group({});
     this.controlsConfig.forEach((ctrlConfig) => {
-      group[ctrlConfig.ctrlName] = this.fb.control(ctrlConfig.defaultValue);
+      group.addControl(ctrlConfig.ctrlName, this.fb.control(ctrlConfig.defaultValue));
     });
-    return this.fb.group(group);
+    return group;
   }
 
 }
