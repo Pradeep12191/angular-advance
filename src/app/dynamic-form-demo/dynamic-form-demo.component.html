@@ -1,7 +1,13 @@
 
 
-<div [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
   <app-dynamic-form [config]="controlsConfig" [form]="form.get('dynamicControls')"></app-dynamic-form>
-</div>
+  <button color="primary" mat-raised-button type="submit">Submit</button>
+</form>
 
-<button mat-button (click)="logFormData()">Submit(see value in console)</button>
+<pre>
+  {{ form.value | json}}
+</pre>
+<blockquote>
+  {{ submitted ? 'Form submitted successfully' : '' }}
+</blockquote>

@@ -15,6 +15,7 @@ export class DynamicFormDemoComponent implements OnInit {
 
   public controlsConfig: Control[];
   public form: FormGroup;
+  public submitted;
   constructor(
     private fb: FormBuilder
   ) { }
@@ -28,6 +29,11 @@ export class DynamicFormDemoComponent implements OnInit {
 
   public logFormData() {
     console.log(this.form.value);
+  }
+
+  public onSubmit() {
+    console.log(this.form.value);
+    this.submitted = true;
   }
 
   private genereateDynamicFormGroup() {
