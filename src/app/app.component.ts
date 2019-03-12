@@ -5,7 +5,7 @@ import {
 import { MediaObserver } from '@angular/flex-layout';
 
 import { animation, showTrigger } from './animation';
-import Inputmask from "inputmask";
+import Inputmask from 'inputmask';
 import { NgModel } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 

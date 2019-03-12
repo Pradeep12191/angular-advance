@@ -1,0 +1,15 @@
+.grid{
+    height: 34px;
+    border: 1px solid black;
+    // &:hover{
+    //     border-color: blue;
+    // }
+}
+
+.drag-border{
+    visibility: hidden;
+}
+
+.drag-transit{
+    border: 2px solid black
+}

@@ -1,0 +1,10 @@
+
+<div fxLayout fxLayoutGap="50px">
+  <div fxFlex="20" class="panel panel-left">
+    <div draggable dragData="button">button</div>
+    <div draggable dragData="grid">grid</div>
+  </div>
+  <div droppable (onDrop)="onItemDrop($event)" fxFlex="40" class="screen">
+    <div #anchor></div>
+  </div>
+</div>

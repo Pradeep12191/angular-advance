@@ -6,8 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSnackBarModule, MatCardModule, MatButtonModule } from '@angular/material';
-import { DemoComponent } from './demo/demo.component';
-import { BlurDirective } from './directive/blur.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
@@ -34,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoaderComponent } from './cdk-overlay/loader/loader.component';
 import { CdkDirective } from './cdk-overlay/cdk.directive';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 import { MxMaskModule } from './mx-mask-input';
 import { InputEventDirective } from './mx-mask-input/input-event.directive';
@@ -47,6 +46,13 @@ import { DynamicFormComponent } from './dynamic-form-demo/dynamic-form/dynamic-f
 import { DynamicInputComponent } from './dynamic-form-demo/dynamic-form/dynamic-input/dynamic-input.component';
 import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 import { AppService } from './services/app.service';
+import { DragDropDemoComponent } from './drag-drop-demo/drag-drop-demo.component';
+import { CdkDragDropDemoComponent } from './cdk-drag-drop-demo/cdk-drag-drop-demo.component';
+import { ButtonComponent } from './drag-drop-demo/button/button.component';
+import { GridComponent } from './drag-drop-demo/grid/grid.component';
+import { ImageAnimationDemoComponent } from './image-animation-demo/image-animation-demo.component';
+import { AddControlDialogComponent } from './dynamic-form-demo/add-control-dialog/add-control-dialog.component';
+import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-animation.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -64,6 +70,7 @@ import { AppService } from './services/app.service';
     ReactiveFormsModule,
     FlexLayoutModule,
     OverlayModule,
+    NgDragDropModule.forRoot(),
     MxMaskModule.forRoot()// MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -97,7 +104,14 @@ import { AppService } from './services/app.service';
     InlineMatTableComponent,
     DynamicFormComponent,
     DynamicInputComponent,
-    DynamicFormDemoComponent
+    DynamicFormDemoComponent,
+    DragDropDemoComponent,
+    CdkDragDropDemoComponent,
+    ButtonComponent,
+    GridComponent,
+    ImageAnimationDemoComponent,
+    AddControlDialogComponent,
+    BgAnimationComponent
   ],
   providers: [AppService],
   bootstrap: [
@@ -107,7 +121,9 @@ import { AppService } from './services/app.service';
     CardComponent,
     DynamicComponent,
     LoaderComponent,
-    DynamicInputComponent
+    GridComponent,
+    DynamicInputComponent,
+    AddControlDialogComponent
   ]
 })
 

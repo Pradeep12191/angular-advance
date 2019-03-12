@@ -1,13 +1,18 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <app-dynamic-form [config]="controlsConfig" [form]="form.get('dynamicControls')"></app-dynamic-form>
+    <div fxLayout fxLayoutGap="20px">
+      <button color="primary" mat-raised-button type="submit">Submit</button>
+      <button color="primary" mat-raised-button (click)="addControlDialog()">Add Control</button>
+    </div>
+  </form>
 
-
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <app-dynamic-form [config]="controlsConfig" [form]="form.get('dynamicControls')"></app-dynamic-form>
-  <button color="primary" mat-raised-button type="submit">Submit</button>
-</form>
-
-<pre>
-  {{ form.value | json}}
-</pre>
-<blockquote>
-  {{ submitted ? 'Form submitted successfully' : '' }}
-</blockquote>
+  <mat-card>
+    <pre>
+        {{ form.value | json}}
+      </pre>
+    <blockquote>
+      {{ submitted ? 'Form submitted successfully' : '' }}
+    </blockquote>
+  </mat-card>
+</div>

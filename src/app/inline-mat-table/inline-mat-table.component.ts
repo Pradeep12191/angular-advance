@@ -20,6 +20,7 @@ export class InlineMatTableComponent implements OnInit, OnDestroy {
   public employees: any[];
   public departments: any[];
   public data: MatTable<any>;
+  private _ctrlIndex = 0;
   constructor(
     private fb: FormBuilder,
     private appService: AppService
@@ -59,12 +60,14 @@ export class InlineMatTableComponent implements OnInit, OnDestroy {
     });
     this.employees.forEach((employee) => {
       this.employeeFormArray.push(this.fb.group({
+        id: this._ctrlIndex++,
         first_name: employee.first_name,
         last_name: employee.last_name,
         email: employee.email,
         gender: employee.gender,
         department: employee.department,
-        isEdit: false
+        isEdit: false,
+        isNewlyAdded: false
       }));
     });
     this.employeeDataSource = new MatTableDataSource<any>(this.employeeFormArray.controls);
@@ -84,13 +87,34 @@ export class InlineMatTableComponent implements OnInit, OnDestroy {
   addEmployee() {
     this.displayAll();
     this.employeeFormArray.push(this.fb.group({
+      id: this._ctrlIndex++,
       first_name: '',
       last_name: '',
       email: '',
       gender: '',
       department: '',
-      isEdit: true
+      isEdit: true,
+      isNewlyAdded: true
     }));
+    this.employeeDataSource = new MatTableDataSource<any>(this.employeeFormArray.controls);
+  }
+
+  resetEmployees() {
+    this.removeNewlyAddedControls();
+    this.employeeFormArray.reset(data);
+  }
+
+  private removeNewlyAddedControls() {
+    const newlyAddedControls = [];
+    this.employeeFormArray.controls.forEach((ctrl, index) => {
+      if (ctrl.get('isNewlyAdded').value) {
+        newlyAddedControls.push(ctrl);
+      }
+    });
+    for (const ctrl of newlyAddedControls) {
+      const removeIndex = this.employeeFormArray.controls.findIndex((c) => c.get('id').value === ctrl.get('id').value);
+      this.employeeFormArray.removeAt(removeIndex);
+    }
     this.employeeDataSource = new MatTableDataSource<any>(this.employeeFormArray.controls);
   }
 

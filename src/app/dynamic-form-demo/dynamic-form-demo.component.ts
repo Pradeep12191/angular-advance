@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Control } from './control.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { AddControlDialogComponent } from './add-control-dialog/add-control-dialog.component';
 
 const data = require('./data.json');
 
@@ -17,7 +19,8 @@ export class DynamicFormDemoComponent implements OnInit {
   public form: FormGroup;
   public submitted;
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -30,6 +33,10 @@ export class DynamicFormDemoComponent implements OnInit {
   public onSubmit() {
     console.log(this.form.value);
     this.submitted = true;
+  }
+
+  public addControlDialog() {
+   const dialogRef = this.dialog.open(AddControlDialogComponent);
   }
 
   private generateDynamicFormGroup() {
