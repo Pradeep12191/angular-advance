@@ -15,18 +15,33 @@ declare var require;
 })
 export class DynamicFormDemoComponent implements OnInit {
 
-  public controlsConfig: Control[];
+  public controlsConfig: Control[] = [];
+  public formControlConfig: Control[] = [];
   public form: FormGroup;
   public submitted;
+  private _controlCount = 0;
   constructor(
     private fb: FormBuilder,
     private dialog: MatDialog
   ) { }
 
+  get dynamicFormGroup() {
+    return this.form.get('dynamicControls') as FormGroup;
+  }
+
   ngOnInit() {
-    this.controlsConfig = data;
+    this.formControlConfig = [...data];
+    const timer = setInterval(() => {
+      if (data[this._controlCount]) {
+        this.controlsConfig.push(data[this._controlCount]);
+        this._controlCount++;
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
     this.form = this.fb.group({
-      dynamicControls: this.generateDynamicFormGroup()
+      dynamicControls: this.generateDynamicFormGroup(),
+      department: '' // this is not part of dynamic control, but still exists as part of form.
     });
   }
 
@@ -36,12 +51,19 @@ export class DynamicFormDemoComponent implements OnInit {
   }
 
   public addControlDialog() {
-   const dialogRef = this.dialog.open(AddControlDialogComponent);
+    const dialogRef = this.dialog.open(AddControlDialogComponent);
+    dialogRef.afterClosed().subscribe((config: Control) => {
+      console.log(config);
+      if (config) {
+        this.dynamicFormGroup.addControl(config.ctrlName, this.fb.control(''));
+        this.controlsConfig.push(config);
+      }
+    });
   }
 
   private generateDynamicFormGroup() {
     const group = this.fb.group({});
-    this.controlsConfig.forEach((ctrlConfig) => {
+    this.formControlConfig.forEach((ctrlConfig) => {
       group.addControl(ctrlConfig.ctrlName, this.fb.control(ctrlConfig.defaultValue));
     });
     return group;

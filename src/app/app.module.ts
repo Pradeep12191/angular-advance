@@ -20,7 +20,6 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PortalModule } from '@angular/cdk/portal';
 import { OvelayCComponent } from './ovelay-c/ovelay-c.component';
 import { MenuComponent } from './menu/menu.component';
-import { InputComponent } from './input/input.component';
 import { MaterialModule } from './material.module';
 import { VirtualKeypadComponent } from './virtual-keypad/virtual-keypad.component';
 import { MatKeyboardModule } from './mat-keyboard/public_api';
@@ -43,7 +42,6 @@ import { FlipcardComponent } from './cards/flipcard/flipcard.component';
 import { InlineTableComponent } from './inline-table/inline-table.component';
 import { InlineMatTableComponent } from './inline-mat-table/inline-mat-table.component';
 import { DynamicFormComponent } from './dynamic-form-demo/dynamic-form/dynamic-form.component';
-import { DynamicInputComponent } from './dynamic-form-demo/dynamic-form/dynamic-input/dynamic-input.component';
 import { DynamicFormDemoComponent } from './dynamic-form-demo/dynamic-form-demo.component';
 import { AppService } from './services/app.service';
 import { DragDropDemoComponent } from './drag-drop-demo/drag-drop-demo.component';
@@ -53,6 +51,12 @@ import { GridComponent } from './drag-drop-demo/grid/grid.component';
 import { ImageAnimationDemoComponent } from './image-animation-demo/image-animation-demo.component';
 import { AddControlDialogComponent } from './dynamic-form-demo/add-control-dialog/add-control-dialog.component';
 import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-animation.component';
+import { DynamicFieldDirective } from './dynamic-form-demo/dynamic-form/dynamic-field.directive';
+import { DynamicFormModule } from './dynamic-form-demo/dynamic-form.module';
+import { ContentAnimationDemoComponent } from './content-animation-demo/content-animation-demo.component';
+import { BgContentAnimationComponent } from './content-animation-demo/bg-content-animation/bg-content-animation.component';
+import { BgContentDirective } from './content-animation-demo/bg-content.directive';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -71,6 +75,7 @@ import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-ani
     FlexLayoutModule,
     OverlayModule,
     NgDragDropModule.forRoot(),
+    DynamicFormModule,
     MxMaskModule.forRoot()// MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -86,7 +91,6 @@ import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-ani
     CardComponent,
     OvelayCComponent,
     MenuComponent,
-    InputComponent,
     VirtualKeypadComponent,
     CdkOverlayComponent,
     ControlvalueaccessorComponent,
@@ -102,16 +106,16 @@ import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-ani
     FlipcardComponent,
     InlineTableComponent,
     InlineMatTableComponent,
-    DynamicFormComponent,
-    DynamicInputComponent,
     DynamicFormDemoComponent,
     DragDropDemoComponent,
     CdkDragDropDemoComponent,
     ButtonComponent,
     GridComponent,
     ImageAnimationDemoComponent,
-    AddControlDialogComponent,
-    BgAnimationComponent
+    BgAnimationComponent,
+    ContentAnimationDemoComponent,
+    BgContentAnimationComponent,
+    BgContentDirective
   ],
   providers: [AppService],
   bootstrap: [
@@ -121,9 +125,7 @@ import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-ani
     CardComponent,
     DynamicComponent,
     LoaderComponent,
-    GridComponent,
-    DynamicInputComponent,
-    AddControlDialogComponent
+    GridComponent
   ]
 })
 

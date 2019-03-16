@@ -1,1 +1,7 @@
-<div #inject></div>
+
+ <ng-container
+ *ngFor="let field of config"
+ dynamicField
+ [config]="field"
+ [form]="form">
+</ng-container>

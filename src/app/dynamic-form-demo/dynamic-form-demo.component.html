@@ -1,9 +1,13 @@
 <div fxLayout="column" fxLayoutGap="20px">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <app-dynamic-form [config]="controlsConfig" [form]="form.get('dynamicControls')"></app-dynamic-form>
+    <mat-form-field appearance="outline">
+      <mat-label>Department</mat-label>
+      <input matInput formControlName="department" type="text">
+    </mat-form-field>
     <div fxLayout fxLayoutGap="20px">
       <button color="primary" mat-raised-button type="submit">Submit</button>
-      <button color="primary" mat-raised-button (click)="addControlDialog()">Add Control</button>
+      <button color="primary" mat-raised-button type="button" (click)="addControlDialog()">Add Control</button>
     </div>
   </form>
 
