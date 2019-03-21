@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'inlineTable', component: InlineTableComponent },
   { path: 'inlineMatTable', component: InlineMatTableComponent },
   { path: 'dynamicForm', component: DynamicFormDemoComponent },
-  { path: 'dynamicDragDrop', component: DragDropDemoComponent },
+  { path: 'dynamicDragDrop',  component: DragDropDemoComponent },
   { path: 'cdkDragDrop', component: CdkDragDropDemoComponent },
   { path: 'flipCards', component: CardsComponent },
   { path: 'imageAnimation', component: ImageAnimationDemoComponent },

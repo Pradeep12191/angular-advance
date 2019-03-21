@@ -53,9 +53,11 @@ import { AddControlDialogComponent } from './dynamic-form-demo/add-control-dialo
 import { BgAnimationComponent } from './image-animation-demo/bg-animation/bg-animation.component';
 import { DynamicFieldDirective } from './dynamic-form-demo/dynamic-form/dynamic-field.directive';
 import { DynamicFormModule } from './dynamic-form-demo/dynamic-form.module';
+import { FlipcardPopoverComponent } from './cards/flipcard/flipcard-popover/flipcard-popover.component';
+import { FlipcardService } from './cards/flipcard/flipcard.service';
 import { ContentAnimationDemoComponent } from './content-animation-demo/content-animation-demo.component';
-import { BgContentAnimationComponent } from './content-animation-demo/bg-content-animation/bg-content-animation.component';
-import { BgContentDirective } from './content-animation-demo/bg-content.directive';
+import { ContentCardComponent } from './content-animation-demo/content-card/content-card.component';
+import { CarouselModule } from './content-animation-demo/carousel.module';
 
 @NgModule({
   imports: [
@@ -76,6 +78,7 @@ import { BgContentDirective } from './content-animation-demo/bg-content.directiv
     OverlayModule,
     NgDragDropModule.forRoot(),
     DynamicFormModule,
+    CarouselModule,
     MxMaskModule.forRoot()// MatSnackBarModule,
     // ServiceWorkerModule.register('./ngsw-worker.js',
     // enabled
@@ -114,10 +117,10 @@ import { BgContentDirective } from './content-animation-demo/bg-content.directiv
     ImageAnimationDemoComponent,
     BgAnimationComponent,
     ContentAnimationDemoComponent,
-    BgContentAnimationComponent,
-    BgContentDirective
+    ContentCardComponent,
+    FlipcardPopoverComponent,
   ],
-  providers: [AppService],
+  providers: [AppService, FlipcardService],
   bootstrap: [
     AppComponent
   ],

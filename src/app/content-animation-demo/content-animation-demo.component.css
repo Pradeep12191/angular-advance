@@ -1,0 +1,25 @@
+:host ::ng-deep ol.bg-content__carousel-page-list li.bg-content__carousel-page{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+:host ::ng-deep ol.bg-content__carousel-page-list li.bg-content__carousel-page.bg-content__active{
+    background-color: aqua
+}
+
+.caption{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    /* text-shadow: 0 2px 4px rgba(0,0,0,0.2); */
+    /* background: -webkit-linear-gradient(left, #9400f0, #3799ff, #00ffa1); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    color: white;
+    padding: 30px
+
+}

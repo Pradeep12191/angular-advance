@@ -1,8 +1,46 @@
-<bg-content-animation>
-  <div *bgContent>
-    <h1>Hello</h1>
+<bg-content-animation [config]="bgContentAnimationConfig" #car="car">
+  <div *bgContent class="bg-item">
+    <app-content-card [data]="card1Data"></app-content-card>
+    <div class="caption" @group (@group.done)="onComp()" >
+        <h1>
+            Everything You Need
+        </h1>
+    </div>
   </div>
-  <div *bgContent>
+  <div *bgContent class="bg-item">
+    <img src="https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/9a_Angular-JS-development.jpg"
+      alt="">
+      <div class="caption"  @group (@group.done)="onComp()">
+        <h1>
+            Everything You Need
+        </h1>
+        <p>Tagit provides the best-in-class solutions for all your mobility needs</p>
+      </div>
+      <div class="announcement">
+        <div class="announcement-text"></div>
+      </div>
+  </div>
+  <div *bgContent class="bg-item">
+    <app-content-card [data]="card2Data"></app-content-card>
+    <div class="caption"  @group (@group.done)="onComp()" >Slide 3</div>
+  </div>
+  <div *bgContent class="bg-item">
     <img src="./assets/images/banner-1.png" alt="">
+    <div class="caption"  @group (@group.done)="onComp()">
+        <h1>
+            Everything You Need
+        </h1>
+        <p>Tagit provides the best-in-class solutions for all your mobility needs</p>
+      </div>
   </div>
+  <carousel-right-arrow>
+      <button class="arrow-btn" mat-mini-fab color="primary" bgArrow="right">
+          <mat-icon aria-label="right arrow icon">fast_forward</mat-icon>
+      </button>
+  </carousel-right-arrow>
+  <carousel-left-arrow>
+      <button class="arrow-btn" mat-mini-fab color="primary" bgArrow="left">
+          <mat-icon aria-label="right arrow icon">fast_rewind</mat-icon>
+      </button>        
+  </carousel-left-arrow>
 </bg-content-animation>

@@ -1,0 +1,16 @@
+<mat-card class="example-card" *ngIf="data">
+  <mat-card-header>
+    <div [style.background-image]="'url(' + data.cardAvatar + ')'" mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{data.cardTitle}}</mat-card-title>
+    <mat-card-subtitle>{{ data.cardSubtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{ data.cardContent }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

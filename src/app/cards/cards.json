@@ -7,7 +7,7 @@
           "imgPath": "assets/images",
           "imgName": "hand shake.png"
         },
-        "header": "Reach your relationship Manager",
+        "header": "Click on card to see popover content",
         "linkInfo": [{
           "linkLabel": "Set as recurring",
           "linkAction": ""

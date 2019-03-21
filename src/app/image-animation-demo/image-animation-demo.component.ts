@@ -12,10 +12,10 @@ export class ImageAnimationDemoComponent {
     animation: 'fade',
     delayBetweenAnimation: 2000,
     images: [
-      { path: '/assets/images/banner-1.png' },
-      { path: '/assets/images/9a_Angular-JS-development.jpg' },
-      { path: '/assets/images/ninja-1533330173110.jpg' },
-      { path: '/assets/images/react.736da783.png' }
+      { path: 'https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/banner-1.png' },
+      { path: 'https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/9a_Angular-JS-development.jpg' },
+      { path: 'https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/ninja-1533330173110.jpg' },
+      { path: 'https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/react.736da783.png' }
     ],
     playAnimationFirst: false
   };

@@ -1,5 +1,9 @@
-<div fxLayout fxLayoutGap="10px">
+<div fxLayout="column" fxLayoutGap="10px" fxLayout.gt-sm>
   <div *ngFor="let card of cards">
-    <app-flipcard [card]="card"></app-flipcard>
+    <app-flipcard [card]="card">
+      <app-flipcard-popover>
+          app-flipcard-popover content
+      </app-flipcard-popover>
+    </app-flipcard>
   </div>
 </div>

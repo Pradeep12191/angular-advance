@@ -1,0 +1,24 @@
+<ng-container #slider></ng-container>
+<!-- <div *ngFor="let slide of slides">
+    <div [ngTemplateOutlet]="slide"></div>
+</div> -->
+<ol *ngIf="pageIndicators" fxLayout fxLayoutAlign="center center"
+    class="bg-content__carousel-page-list">
+    <li class="bg-content__carousel-page" *ngFor="let slide of slidesArray; let slideIndex = index"
+        [ngClass]="{'bg-content__active': slideIndex === activeSlideIndex}"
+        (click)="goTo(slideIndex)"></li>
+</ol>
+<div *ngIf="arrowIndicators" fxLayout="column" fxLayoutAlign="center center"
+    class="arrow arrow__prevoius">
+    <ng-content select="carousel-left-arrow"></ng-content>
+    <!-- <button class="arrow-btn" mat-mini-fab color="primary" [disabled]="disableArrow('left')" (click)="gotToPrevious()">
+        <mat-icon aria-label="left arrow icon">chevron_left</mat-icon>
+    </button> -->
+</div>
+<div *ngIf="arrowIndicators" fxLayout="column" fxLayoutAlign="center center"
+    class="arrow arrow__next">
+    <ng-content select="carousel-right-arrow"></ng-content>
+    <!-- <button class="arrow-btn" mat-mini-fab color="primary" [disabled]="disableArrow('right')" (click)="goToNext()">
+        <mat-icon aria-label="right arrow icon">chevron_right</mat-icon>
+    </button> -->
+</div>

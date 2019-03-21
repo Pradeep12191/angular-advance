@@ -1,7 +1,7 @@
-<div class="flip-card">
+<div class="flip-card" fxLayout="column" (click)="togglePopover()">
   <div class="flip-card__inner" [@rotateState]="direction">
     <div class="flip-card__front">
-      <mat-card>
+      <mat-card [class.active]="active">
         <mat-card-header>
           <mat-card-title fxLayout fxLayoutAlign="center center">
             <div>{{frontCard.header}}</div>
@@ -11,13 +11,13 @@
           <mat-icon>face</mat-icon>
         </mat-card-content>
         <mat-card-actions fxLayout fxLayoutAlign="center center">
-          <button mat-raised-button color="accent" (click)="rotate('back')">Know your RM</button>
+          <button mat-raised-button color="accent" (click)="rotate('back'); $event.stopPropagation()">Know your RM</button>
         </mat-card-actions>
       </mat-card>
     </div>
 
-    <div class="flip-card__back">
-      <mat-card fxLayout="column" fxLayoutAlign="space-between">
+    <!-- <div class="flip-card__back">
+      <mat-card [class.active]="active" fxLayout="column" fxLayoutAlign="space-between">
         <mat-card-header fxLayout fxLayoutAlign="center center">
           <mat-card-title>
             <div>{{backCard.header}}</div>
@@ -37,8 +37,10 @@
           <button (click)="rotate('front')" mat-raised-button color="accent">Ok</button>
         </mat-card-actions>
       </mat-card>
-    </div>
-
+    </div> -->
+    
   </div>
-
+  <div [style.display]="popoverDisplay" class="flip-card__popover mat-elevation-z2">
+    <ng-content select="app-flipcard-popover"></ng-content>
+  </div>
 </div>

@@ -54,3 +54,9 @@ html, body{
     padding: 0;
     margin: 0;
 }
+
+.bg-content__carousel-page li{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}

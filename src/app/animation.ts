@@ -1,4 +1,4 @@
-import { trigger, state, style, transition, animate } from "@angular/animations";
+import { trigger, state, style, transition, animate, group, sequence } from "@angular/animations";
 
 export const animation = trigger('clickedTrigger', [
     state('default', style({
@@ -38,7 +38,16 @@ export const showTrigger = trigger('show', [
         style({
             opacity: 0
         }),
-        animate('1s')
+        animate('10s')
+    ]),
+])
+
+export const slideUp = trigger('slideUp', [
+    transition(':enter', [
+        style({
+            transform: 'translateY(100%)'
+        }),
+        animate('0.5s ease-in-out')
     ]),
 ])
 
@@ -48,4 +57,17 @@ export const slideRight = trigger('slideRight', [
             
         })
     ])
+]);
+export const groupAnimation = trigger('group', [
+transition(':enter', [
+    style({
+        transform: 'translateY(100%)'
+    }),
+    sequence([
+    // animate('1s', style({ backgroundColor: 'black' })),
+    // animate('2s', style({ color: 'white' })),
+    // animate('2s 2s ease-in-out', style({transform: 'translateY(50%)'})),
+    animate('2s 2s ease-in-out', style({transform: 'translateY(0%)'}))
+  ])
 ])
+]);
