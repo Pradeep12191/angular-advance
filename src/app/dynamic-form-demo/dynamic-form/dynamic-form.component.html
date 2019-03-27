@@ -1,7 +1,10 @@
 
- <ng-container
- *ngFor="let field of config"
- dynamicField
- [config]="field"
- [form]="form">
-</ng-container>
+ <div fxLayout *ngFor="let row of config">
+     <div *ngFor="let field of row">
+            <ng-container
+            dynamicField
+            [config]="field"
+            [form]="form">
+            </ng-container>
+     </div>
+ </div>

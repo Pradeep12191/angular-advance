@@ -1,16 +1,57 @@
 [
-    {
-        "ty": "input",
-        "ctrlName": "first_name",
-        "defaultValue" :"Pradeep",
-        "placeholder": "First Name",
-        "label": "First Name"
-    },
-    {
-        "ty": "input",
-        "ctrlName": "last_name",
-        "defaultValue" :"Siva",
-        "placeholder": "Last Name",
-        "label": "Last Name"
-    }
+    [
+        {
+            "ty": "input",
+            "ctrlName": "first_name",
+            "defaultValue": "Pradeep",
+            "placeholder": "First Name",
+            "label": "First Name"
+        },
+        {
+            "ty": "input",
+            "ctrlName": "last_name",
+            "defaultValue": "Siva",
+            "placeholder": "Last Name",
+            "label": "Last Name"
+        },
+        {
+            "ty": "input",
+            "ctrlName": "last_name",
+            "defaultValue": "Siva",
+            "placeholder": "Last Name",
+            "label": "Last Name"
+        }
+    ],
+    [
+        {
+            "ty": "input",
+            "ctrlName": "first_name",
+            "defaultValue": "Pradeep",
+            "placeholder": "First Name",
+            "label": "First Name"
+        },
+        {
+            "ty": "input",
+            "ctrlName": "last_name",
+            "defaultValue": "Siva",
+            "placeholder": "Last Name",
+            "label": "Last Name"
+        }
+    ],
+    [
+        {
+            "ty": "input",
+            "ctrlName": "first_name",
+            "defaultValue": "Pradeep",
+            "placeholder": "First Name",
+            "label": "First Name"
+        },
+        {
+            "ty": "input",
+            "ctrlName": "last_name",
+            "defaultValue": "Siva",
+            "placeholder": "Last Name",
+            "label": "Last Name"
+        }
+    ]
 ]
