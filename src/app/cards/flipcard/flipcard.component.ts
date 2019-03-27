@@ -35,6 +35,7 @@ export class FlipcardComponent implements OnInit {
   private _cards = 2;
   @Input() card;
   @Input() cardNo;
+  @Input() cardLength;
   @ContentChild(FlipcardPopoverComponent) popover: FlipcardPopoverComponent;
 
   constructor(
@@ -72,9 +73,14 @@ export class FlipcardComponent implements OnInit {
     }
     console.log(this.md.isActive('gt-sm'));
     if (this.md.isActive('gt-sm')) {
-      this.popoverWidth = this._cards * 100;
+      this.popoverWidth = this.cardLength * 100;
       this.popoverLeft = -(this.cardNo * 100);
-      this.popoverArrowLeft = (25 + (50 * this.cardNo) - 4);
+      
+      const a =  Math.ceil(100 / this.cardLength);
+      const b = Math.ceil(a / 2);
+      const res = b + (a * this.cardNo);
+      // this.popoverArrowLeft = (25 + (50 * this.cardNo) - 4);
+      this.popoverArrowLeft = res;
     } else {
       this.popoverWidth = 100;
       this.popoverLeft = 0;
