@@ -9,7 +9,7 @@ import { BgAnimationConfig } from './bg-animation/bg-animation.config';
 export class ImageAnimationDemoComponent {
   config: BgAnimationConfig = {
     animationDelay: '2s',
-    animation: 'fade',
+    animation: 'slideRight',
     delayBetweenAnimation: 2000,
     images: [
       { path: 'https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/banner-1.png' },

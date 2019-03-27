@@ -7,6 +7,7 @@ export const slideRight = (time) => {
             animate(time)
         ],
         leave: [
+            style({ transform: 'translateX(0%)' }),
             animate(time, style({ transform: 'translateX(100%)' }))
         ]
     };

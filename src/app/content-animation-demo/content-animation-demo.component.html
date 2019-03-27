@@ -1,7 +1,7 @@
 <bg-content-animation [config]="bgContentAnimationConfig" #car="car">
   <div *bgContent class="bg-item">
     <app-content-card [data]="card1Data"></app-content-card>
-    <div class="caption" @group (@group.done)="onComp()" >
+    <div class="caption" @group (@group.done)="onComp($event)" >
         <h1>
             Everything You Need
         </h1>
@@ -10,7 +10,7 @@
   <div *bgContent class="bg-item">
     <img src="https://raw.githubusercontent.com/Pradeep12191/angular-advance/master/src/assets/images/9a_Angular-JS-development.jpg"
       alt="">
-      <div class="caption"  @group (@group.done)="onComp()">
+      <div class="caption"  @group (@group.done)="onComp($event)">
         <h1>
             Everything You Need
         </h1>
@@ -22,11 +22,11 @@
   </div>
   <div *bgContent class="bg-item">
     <app-content-card [data]="card2Data"></app-content-card>
-    <div class="caption"  @group (@group.done)="onComp()" >Slide 3</div>
+    <div class="caption"  @group (@group.done)="onComp($event)" >Slide 3</div>
   </div>
   <div *bgContent class="bg-item">
     <img src="./assets/images/banner-1.png" alt="">
-    <div class="caption"  @group (@group.done)="onComp()">
+    <div class="caption"  @group (@group.done)="onComp($event)">
         <h1>
             Everything You Need
         </h1>

@@ -60,3 +60,15 @@ html, body{
     width: 10px;
     border-radius: 50%;
 }
+
+.ht-36{
+    height: 36px;
+}
+
+.align-right{
+    text-align: right
+}
+
+.pop_plane{
+    width: 100%;
+}

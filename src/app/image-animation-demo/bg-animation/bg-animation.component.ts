@@ -98,9 +98,9 @@ export class BgAnimationComponent implements OnInit, OnDestroy {
     if (this._hasDestroyed) {
       return;
     }
-    if (this._leaveAnimationPlayer) {
-      this._leaveAnimationPlayer.destroy();
-    }
+    // if (this._leaveAnimationPlayer) {
+    //   this._leaveAnimationPlayer.destroy();
+    // }
     this._leaveAnimationPlayer = this.createAnimation(this._imgEl, animations[this.animationType](this.animtionDelay).leave);
 
     this._leaveAnimationPlayer.onDone(() => {

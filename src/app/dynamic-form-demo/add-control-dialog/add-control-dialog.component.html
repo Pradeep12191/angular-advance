@@ -3,14 +3,45 @@
   <mat-form-field>
     <input formControlName="controlName" matInput placeholder="Control name"
       type="text">
+      <mat-error *ngIf="addControlForm.get('controlName').errors?.required">
+        Control name is required
+      </mat-error>
+      <mat-error *ngIf="addControlForm.get('controlName').errors?.controlAlreadyExists">Control name already exists</mat-error>
   </mat-form-field>
-  <mat-form-field>
-    <mat-select formControlName="controlType" placeholder="Control type">
-      <mat-option [value]="option" *ngFor="let option of controlTypes">{{option}}</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div>
+    <mat-form-field>
+      <mat-select (selectionChange)="onControlTypeChange($event)" formControlName="controlType"
+        placeholder="Control type">
+        <mat-option [value]="option" *ngFor="let option of controlTypes">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="options" *ngIf="addControlForm.get('controlType').value === 'select'">
+      <div class="mat-title options__title">
+        Options
+      </div>
+      <div fxLayout="column">
+        <ng-container formArrayName="options" *ngFor="let optionCtrl of addControlForm.get('options').controls; let ctrlIndex=index">
+          <ng-container [formGroup]="optionCtrl">
+            <div fxLayout fxLayoutGap="10px" fxLayoutAlign="start center">
+              <div fxFlex="20" class="options__number" fxLayout="column" fxLayoutAlign="center center">{{(ctrlIndex + 1) + ' )'}}</div>
+              <mat-form-field fxFlex="70">
+                <input placeholder="option" matInput type="text" formControlName="option">
+              </mat-form-field>
+              <button (click)="removeControl(ctrlIndex)" class="ht-36" fxFlex mat-flat-button color="primary">X</button>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="align-right options__action">
+        <button (click)="addOption()" color="primary" mat-raised-button>Add Option</button>
+      </div>
+    </div>
+  </div>
+
+
 </div>
 <div mat-dialog-actions>
-  <button mat-button mat-dialog-close >Cancel</button>
-  <button mat-button (click)="addControl()" cdkFocusInitial>Ok</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [disabled]="addControlForm.invalid" (click)="addControl()" cdkFocusInitial>Ok</button>
 </div>

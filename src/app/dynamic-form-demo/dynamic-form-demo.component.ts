@@ -51,7 +51,9 @@ export class DynamicFormDemoComponent implements OnInit {
   }
 
   public addControlDialog() {
-    const dialogRef = this.dialog.open(AddControlDialogComponent);
+    const dialogRef = this.dialog.open(AddControlDialogComponent,
+      { data: { config: this.controlsConfig } }
+    );
     dialogRef.afterClosed().subscribe((config: Control) => {
       console.log(config);
       if (config) {

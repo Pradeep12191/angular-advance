@@ -58,6 +58,7 @@ import { FlipcardService } from './cards/flipcard/flipcard.service';
 import { ContentAnimationDemoComponent } from './content-animation-demo/content-animation-demo.component';
 import { ContentCardComponent } from './content-animation-demo/content-card/content-card.component';
 import { CarouselModule } from './content-animation-demo/carousel.module';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 @NgModule({
   imports: [
@@ -119,6 +120,7 @@ import { CarouselModule } from './content-animation-demo/carousel.module';
     ContentAnimationDemoComponent,
     ContentCardComponent,
     FlipcardPopoverComponent,
+    ObservableDemoComponent,
   ],
   providers: [AppService, FlipcardService],
   bootstrap: [
@@ -128,7 +130,8 @@ import { CarouselModule } from './content-animation-demo/carousel.module';
     CardComponent,
     DynamicComponent,
     LoaderComponent,
-    GridComponent
+    GridComponent,
+    FlipcardPopoverComponent
   ]
 })
 

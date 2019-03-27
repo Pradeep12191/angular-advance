@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px" fxLayout.gt-sm>
-  <div *ngFor="let card of cards">
-    <app-flipcard [card]="card">
+  <div *ngFor="let card of cards; let i =index">
+    <app-flipcard [card]="card" [cardNo]="i">
       <app-flipcard-popover>
           app-flipcard-popover content
       </app-flipcard-popover>

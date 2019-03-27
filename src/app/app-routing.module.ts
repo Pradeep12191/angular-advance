@@ -13,6 +13,7 @@ import { DragDropDemoComponent } from './drag-drop-demo/drag-drop-demo.component
 import { CdkDragDropDemoComponent } from './cdk-drag-drop-demo/cdk-drag-drop-demo.component';
 import { ImageAnimationDemoComponent } from './image-animation-demo/image-animation-demo.component';
 import { ContentAnimationDemoComponent } from './content-animation-demo/content-animation-demo.component';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/flipCards' },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'flipCards', component: CardsComponent },
   { path: 'imageAnimation', component: ImageAnimationDemoComponent },
   { path: 'contentAnimation', component: ContentAnimationDemoComponent },
+  { path: 'observable', component: ObservableDemoComponent },
 ];
 
 @NgModule({

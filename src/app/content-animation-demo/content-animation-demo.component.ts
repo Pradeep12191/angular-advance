@@ -1,4 +1,5 @@
 import { Component, OnInit, ContentChildren, QueryList, AfterContentInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { AnimationEvent } from '@angular/animations';
 import { BgContentDirective } from './bg-content.directive';
 import { BgContentAnimationConfig } from './bg-content-animation/bg-content-animation.config';
 import { showTrigger, slideUp, groupAnimation } from '../animation';
@@ -16,6 +17,7 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
   public bgContentAnimationConfig: BgContentAnimationConfig;
   public card1Data;
   public card2Data;
+  private _unfinishedAnimation = false;
 
   constructor(
 
@@ -25,11 +27,11 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
     this.bgContentAnimationConfig = {
       animation: 'slideRight',
       animationDuration: '2s ease-in-out',
-      autoPlay: false,
+      // autoPlay: false,
       manualTrigger: true,
-      pageIndicators: true,
-      arrowIndicators: true,
-      playAnimationAtFirst: true,
+      // pageIndicators: true,
+      // arrowIndicators: true,
+      // playAnimationAtFirst: true,
       // playInfinite: false
     };
     this.card1Data = {
@@ -49,9 +51,20 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
     };
   }
 
-  onComp(car) {
+  onComp(e: AnimationEvent) {
     // console.log(car)
-    this.carousel.goToNext();
+    if (e.fromState === 'void') {
+      if (this._unfinishedAnimation) {
+        return;
+      }
+      setTimeout(() => {
+        this.carousel.goToNext();
+      }, 2000);
+      this._unfinishedAnimation = true;
+    } else {
+      this._unfinishedAnimation = false;
+    }
+    // console.log('animation done', e.fromState);
   }
 
   ngAfterViewInit() {
@@ -62,6 +75,6 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
     // setTimeout(() => {
     //   this.carousel.goToNext();
     // }, 3000)
-   
+
   }
 }

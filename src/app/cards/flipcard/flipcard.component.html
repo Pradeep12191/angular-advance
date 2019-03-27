@@ -40,7 +40,11 @@
     </div> -->
     
   </div>
-  <div [style.display]="popoverDisplay" class="flip-card__popover mat-elevation-z2">
+  <div  [style.display]="popoverDisplay" 
+        [style.left]="popoverLeft + '%'" 
+        [style.width]="popoverWidth + '%'" 
+        class="flip-card__popover mat-elevation-z2">
+    <div [style.left]="popoverArrowLeft + '%'" class="flip-card__popover__arrow"></div>
     <ng-content select="app-flipcard-popover"></ng-content>
   </div>
 </div>

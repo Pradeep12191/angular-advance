@@ -4,9 +4,10 @@ export const slideRight = (time) => {
     return {
         enter: [
             style({ transform: 'translateX(-100%)' }),
-            animate(time)
+            animate(time),
         ],
         leave: [
+            style({ transform: 'translateX(0%)'}),
             animate(time, style({ transform: 'translateX(100%)' }))
         ]
     };
@@ -19,6 +20,7 @@ export const slideLeft = (time) => {
             animate(time)
         ],
         leave: [
+            style({ transform: 'translateX(0%)'}),
             animate(time, style({ transform: 'translateX(-100%)' }))
         ]
     };
