@@ -35,7 +35,7 @@ export class FlipcardComponent implements OnInit {
   private _cards = 2;
   @Input() card;
   @Input() cardNo;
-  @Input() cardLength = 3;
+  @Input() cardLength;
   @ContentChild(FlipcardPopoverComponent) popover: FlipcardPopoverComponent;
 
   constructor(
@@ -51,6 +51,7 @@ export class FlipcardComponent implements OnInit {
   ngOnInit() {
     this.frontCard = this.card['front_face_card'];
     this.backCard = this.card['back_face_card'];
+    const cards = 2;
   }
 
   rotate(direction) {
@@ -70,31 +71,20 @@ export class FlipcardComponent implements OnInit {
     if ((this.flipcardService.activeFlipcard !== this) && this.flipcardService.activeFlipcard) {
       this.flipcardService.activeFlipcard.hidePopover();
     }
-    if (this.md.isActive('sm')) {
-      // mobile
-      this.cardLength = 2;
-    } else if (this.md.isActive('xs')) {
-      // desktop
-      this.cardLength = 1;
-    } else {
-      this.cardLength = 3;
-    }
-    const cardNo = this.cardNo % this.cardLength;
     console.log(this.md.isActive('gt-sm'));
-    //if (this.md.isActive('gt-sm')) {
-    this.popoverWidth = this.cardLength * 100;
-    this.popoverLeft = -(cardNo * 100);
-    const a = Math.ceil(100 / this.cardLength);
-    const b = Math.ceil(a / 2);
-    const res = b + (a * cardNo);
-    // this.popoverArrowLeft = (25 + (50 * this.cardNo) - 4);
-    this.popoverArrowLeft = res;
-    // }
-    //  else {
-    //   this.popoverWidth = 100;
-    //   this.popoverLeft = 0;
-    //   this.popoverArrowLeft = 46;
-    // }
+    if (this.md.isActive('gt-sm')) {
+      this.popoverWidth = this.cardLength * 100;
+      this.popoverLeft = -(this.cardNo * 100);
+      const a = Math.ceil(100 / this.cardLength);
+      const b = Math.ceil(a / 2);
+      const res = b + (a * this.cardNo);
+      // this.popoverArrowLeft = (25 + (50 * this.cardNo) - 4);
+      this.popoverArrowLeft = res;
+    } else {
+      this.popoverWidth = 100;
+      this.popoverLeft = 0;
+      this.popoverArrowLeft = 46;
+    }
     this.flipcardService.activeFlipcard = this;
     this.active = !this.active;
     this.popoverDisplay = this.popoverDisplay === 'block' ? 'none' : 'block';
