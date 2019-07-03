@@ -1,0 +1,10 @@
+<header>
+    <mat-toolbar fxLayout class="mat-elevation-z6" color="primary">
+        <div *ngIf="showToggle" fxLayout="column" fxLayoutAlign="center center" (click)="toggleSidenav()">
+            <button mat-icon-button>
+                <mat-icon>menu</mat-icon>
+            </button>
+        </div>
+        <div class="caption">Advance Angular Topics</div>
+    </mat-toolbar>
+</header>

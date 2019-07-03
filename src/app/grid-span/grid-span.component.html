@@ -1,0 +1,9 @@
+<div class="grid-container" [gdColumns]="gdColumns" gdRows="50px 50px">
+    <ng-container *ngFor="let gridElem of grids; let i = index">
+        <div *ngIf="!gridElem.isDeleted" [gdColumn]="gridElem.grid.column.value" [gdRow]="gridElem.grid.row.value" (click)=onGridSelect(gridElem) [style.backgroundColor]="gridElem.backgroundColor" class="grid"></div>
+    </ng-container>
+</div>
+
+<button mat-raised-button (click)="onSpan()">Span</button>
+<button (click)="reload()" mat-button>Reload</button>
+

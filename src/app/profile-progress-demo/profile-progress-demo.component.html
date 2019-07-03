@@ -1,0 +1,12 @@
+<div fxLayoutAlign="center center" fxLayout="column">
+    <app-profile-progress [image]="imageDataUrl" (imageSelected)="onImageSelected($event)"
+      [profileCompeletionPercent]="profileCompeletionPercent">
+    </app-profile-progress>
+    
+    <p style="color: rgb(191, 31, 96)">{{ slider.displayValue + '% Completed' }}</p>
+
+    <mat-slider (input)="onSliderInput($event)" [value]="profileCompeletionPercent"
+    #slider></mat-slider>
+  </div>
+
+

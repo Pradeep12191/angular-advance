@@ -1,4 +1,38 @@
-<mat-card>
+<!-- <uc-stock-price stock-symbol="AAPL"></uc-stock-price> -->
+<dx-accordion
+  [dislpay-mode]="accordionDisplayMode">
+  <dx-collapse-panel
+    (opened)="setStep(i)"
+    *ngFor="let item of [1, 2, 3, 4]; let i = index"
+    [expanded]="step === i">
+      <div slot="dx-panel-content">
+        <div fxLayout="column">
+          <div fxLayout fxLayoutGap="25px">
+            <mat-form-field fxFlex="25">
+              <input placeholder="enter name" matInput type="text">
+            </mat-form-field>
+            <mat-form-field fxFlex="25">
+              <input placeholder="enter place" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <dx-panel-header>
+        <dx-panel-title>
+          Personal Data
+        </dx-panel-title>
+        <dx-panel-description>
+          Enter your name
+        </dx-panel-description>
+      </dx-panel-header>
+      <div slot="dx-action-row">
+        <button style="margin-right: 10px;" *ngIf="i !== 0" (click)="prevStep()" mat-raised-button>Previous</button>
+        <button *ngIf="i !== 3" (click)="nextStep()" mat-raised-button>Next</button>
+      </div>
+  </dx-collapse-panel>
+</dx-accordion>
+
+<!-- <mat-card>
   <mat-card-header>
     <mat-card-title>Switch Map</mat-card-title>
     <mat-card-subtitle></mat-card-subtitle>
@@ -7,3 +41,23 @@
     <button (click)="emitValue()" mat-button>Emit</button>
   </mat-card-content>
 </mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Merge Map</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <button (click)="mergeObs()" mat-button>Emit</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Exhaust Map</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <button (click)="exhaustObs()" mat-button>Emit</button>
+  </mat-card-content>
+</mat-card> -->

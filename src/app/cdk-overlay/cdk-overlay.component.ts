@@ -1,7 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderCDKComponent } from './loader/loader.component';
 import { MatSidenav } from '@angular/material';
 import { CdkDirective } from './cdk.directive';
 

@@ -28,9 +28,9 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
       animation: 'slideRight',
       animationDuration: '2s ease-in-out',
       // autoPlay: false,
-      manualTrigger: true,
+      // manualTrigger: true,
       // pageIndicators: true,
-      // arrowIndicators: true,
+      arrowIndicators: true,
       // playAnimationAtFirst: true,
       // playInfinite: false
     };
@@ -69,7 +69,7 @@ export class ContentAnimationDemoComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      this.carousel.start();
+      // this.carousel.start();
     })
 
     // setTimeout(() => {

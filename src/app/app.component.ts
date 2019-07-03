@@ -16,6 +16,7 @@ import { ComponentPortal } from '@angular/cdk/portal';
 import { CardComponent } from './card/card.component';
 import { AnimationBuilder, style, animate, AnimationPlayer, AnimationMetadata } from '@angular/animations';
 import { AppService } from './services/app.service';
+import { Router } from '@angular/router';
 
 const anim = [];
 
@@ -47,7 +48,8 @@ export class AppComponent implements AfterViewInit, OnInit {
     private overlay: Overlay,
     private builder: AnimationBuilder,
     public mediaObserver: MediaObserver,
-    private appService: AppService
+    private appService: AppService,
+    private router: Router
   ) {
     this.mediaObserver.media$.subscribe((media) => {
       console.log('media alias', media);

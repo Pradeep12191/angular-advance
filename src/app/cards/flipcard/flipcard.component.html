@@ -1,4 +1,7 @@
-<div class="flip-card" fxLayout="column" (click)="togglePopover()">
+<div class="flip-card" fxLayout="column" 
+[style.transform]="translateCard"
+(pan)="swipe($event)"
+>
   <div class="flip-card__inner" [@rotateState]="direction">
     <div class="flip-card__front">
       <mat-card [class.active]="active">

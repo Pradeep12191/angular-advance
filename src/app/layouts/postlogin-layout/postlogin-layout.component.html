@@ -1,0 +1,60 @@
+<router-outlet name="header"></router-outlet>
+
+<mat-sidenav-container>
+    <mat-sidenav class="mat-elevation-z2" [opened]="openSideNav"
+        #sidenav [mode]="isSmallDevice ? 'over' : 'side'">
+        <mat-list role="list">
+            <mat-list-item id="view-container-reference" routerLinkActive="active"
+                routerLink="/home/viewContainerReference" class="menu"
+                role="listitem">View Container Reference</mat-list-item>
+            <mat-list-item class="menu" role="listitem">OnPush ChangeDetection</mat-list-item>
+            <mat-list-item class="menu" role="listitem">Animation Builder</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/cdkOverlay"
+                class="menu" role="listitem">CDK Overlay</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/structuralDirective"
+                class="menu" role="listitem">Structural Directive</mat-list-item>
+            <mat-list-item class="menu" role="listitem">Angular Animation</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/inlineTable"
+                class="menu" role="listitem">Inline Table</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/inlineMatTable"
+                class="menu" role="listitem">Inline Material Table</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/dynamicForm"
+                class="menu" role="listitem">Dynamic Form</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/flipCards"
+                class="menu" role="listitem">Dynamic Flip cards</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/dynamicDragDrop"
+                class="menu" role="listitem">Dynamic Drag and drop</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/cdkDragDrop"
+                class="menu" role="listitem">CDK Drag and drop</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/imageAnimation"
+                class="menu" role="listitem">Image Animation</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/contentAnimation"
+                class="menu" role="listitem">Content Animation</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/observable"
+                class="menu" role="listitem">Observable</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/d3"
+                class="menu" role="listitem">D3</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/profileProgress"
+                class="menu" role="listitem">ProfileProgress</mat-list-item>
+            <mat-list-item routerLinkActive="active" routerLink="/home/profileProgressStencil"
+                class="menu" role="listitem">Profile Stencil</mat-list-item>
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/controlValueAccessor"
+                role="listitem">Control Value Accessor</mat-list-item>
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/tableRadio"
+                role="listitem">Table with Radio</mat-list-item>
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/rawPieChart"
+                role="listitem">Raw PieChart</mat-list-item>
+                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/matMenuTree"
+                role="listitem">Mat Menu Tree</mat-list-item>
+                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/gridSpan"
+                role="listitem">Grid Span</mat-list-item>
+                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/idbDemo"
+                role="listitem">IndexedDb(idb)</mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet name="footer"></router-outlet>

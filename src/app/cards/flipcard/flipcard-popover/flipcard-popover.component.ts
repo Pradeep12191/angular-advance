@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+// import { Ham} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-flipcard-popover',

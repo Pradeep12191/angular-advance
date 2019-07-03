@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Crop profile Image</h1>
+<div mat-dialog-content>
+    <image-cropper outputType="file" [imageChangedEvent]="data.image" [resizeToWidth]="128" [roundCropper]="true" (imageCropped)="onImageCropped($event)"
+        
+        ></image-cropper>
+        <!-- <img [src]="data.image" alt=""> -->
+</div>
+<div mat-dialog-actions>
+  <!-- <button mat-button (click)="onNoClick()">Cancel</button> -->
+  <button mat-button [mat-dialog-close]="result" cdkFocusInitial>Confirm</button>
+</div>

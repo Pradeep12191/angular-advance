@@ -1,0 +1,28 @@
+<svg [attr.height]="200" [attr.width]="200">
+  <!-- box-shadow filter -->
+  <defs>
+    <filter id="dropshadow" x="-40%" y="-40%" width="180%" height="180%"
+      filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+      <!-- stdDeviation is how much to blur -->
+      <feOffset dx="5" dy="5" result="offsetblur" />
+      <feOffset dx="-5" dy="-5" result="offsetblur" />
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(10, 10)">
+    <path (click)="onMouseenter(sector)" 
+      [attr.stroke]="sector?.hover?.stroke" [attr.stroke-width]="sector?.hover?.strokeWidth" [attr.filter]="sector?.hover?.filter"
+      class="animate" *ngFor="let sector of sectors" [attr.fill]="sector.color"
+      [attr.d]="'M' + sector.L + ',' + sector.L + ' L' + sector.L + ',0 A' + sector.L + ',' + sector.L + ' 1 0,1 ' + sector.X + ', ' + sector.Y + ' z'"
+      [attr.transform]="'rotate(' + sector.R + ', '+ sector.L+', '+ sector.L+')'"></path>
+
+    <circle [attr.cx]="area * 0.5" [attr.cy]="area * 0.5" [attr.r]="area * 0.28"
+      fill="#fff"></circle>
+  </g>
+
+</svg>

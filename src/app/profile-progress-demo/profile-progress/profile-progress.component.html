@@ -1,0 +1,96 @@
+<div class="progress-container">
+    <input (click)="nativeFileBtn.value = null" #nativeFileBtn id="native-file-btn"
+        type='file' accept=".png,.jpg" (change)="onImageSelect($event)">
+    <div class="upload-btn-container">
+        <button (click)="nativeFileBtn.click()" class="upload-btn" mat-mini-fab>
+            <img src="./assets/images/circleAdd.png" alt="upload-btn">
+        </button>
+    </div>
+    <div class="progress-image">
+        <svg [attr.width]="svgWidth" [attr.height]="svgHeight">
+            <!-- <defs>
+              <pattern patternUnits="userSpaceOnUse" height="100%" width="100%"
+                id="upload-btn" x="-5" y="-5">
+                <image x="0" y="0" viewBox="0 0 30 30" height="30" width="30"
+                  xlink:href="./assets/images/user.png"></image>
+              </pattern>
+            </defs> -->
+            <defs>
+                <pattern patternUnits="userSpaceOnUse" height="100%" width="100%"
+                    id="image" x="0" y="0">
+                    <image
+                        [attr.x]="imageOffset"
+                        [attr.y]="imageOffset"
+                        [attr.height]="imageArea"
+                        [attr.width]="imageArea"
+                        [attr.xlink:href]="image"></image>
+                </pattern>
+            </defs>
+            <defs>
+                <filter id="dropshadow" x="-40%" y="-40%" width="180%" height="180%"
+                    filterUnits="userSpaceOnUse">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+                    <!-- stdDeviation is how much to blur -->
+                    <feOffset dx="5" dy="5" result="offsetblur" />
+                    <feOffset dx="-5" dy="-5" result="offsetblur" />
+                    <feMerge>
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+            <!-- <defs>
+              <filter id="btn-dropshadow" x="-40%" y="-40%" width="180%" height="180%"
+                filterUnits="userSpaceOnUse">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="1" />
+                <feOffset dx="5" dy="5" result="offsetblur" />
+                <feOffset dx="-5" dy="-5" result="offsetblur" />
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
+              </filter>
+            </defs> -->
+            <!-- progress - pic -->
+
+            <!-- <circle cx="85" cy="85" [attr.r]="imageCircleRadius"/> -->
+
+            <!-- progress - path -->
+            <circle fill="url(#image)" filter="url(#dropshadow)"
+                [attr.cx]="circleCenter"
+                [attr.cy]="circleCenter"
+                [attr.r]="pathCircleRadius"
+                [attr.stroke]="pathStrokeColor"
+                [attr.stroke-width]="pathStrokeWidth" />
+
+            <!-- progress - fill -->
+            <circle
+                [attr.cx]="circleCenter"
+                [attr.cy]="circleCenter"
+                [attr.r]="fillCircleRadius" fill="none"
+                [attr.stroke]="fillStrokeColor"
+                stroke-linecap="round"
+                [style.stroke-dasharray]="dashArray"
+                [style.stroke-dashoffset]="dashOffset"
+                [attr.stroke-width]="pathStrokeWidth"
+                [attr.transform]="'rotate(-90 ' + circleCenter + ' ' + circleCenter + ' )'"
+                class="progress-value" />
+            <!-- <g transform="translate(159, 120)">
+              <circle style="cursor: pointer;" [@scale]="scaleState" filter="url(#btn-dropshadow)"
+                fill="white" cx="10" cy="10" r="15" />
+              <circle style="cursor: pointer;" [@scale]="scaleState" (mouseover)="scaleState = 'mouseEnter'"
+                (mouseleave)="scaleState = 'mouseLeave'" fill="url(#upload-btn)"
+                cx="10" cy="10" r="15" />
+            </g> -->
+            <!-- <g transform="translate(159, 120)">
+                  <circle  fill="url(#upload-btn)" cx="10" cy="10" r="15"/>
+                </g> -->
+
+        </svg>
+    </div>
+
+    <image-cropper [roundCropper]="true" 
+        [imageBase64]="image64"></image-cropper>
+</div>

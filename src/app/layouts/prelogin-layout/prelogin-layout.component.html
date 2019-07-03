@@ -1,0 +1,10 @@
+
+<router-outlet name="header"></router-outlet>
+
+<mat-sidenav-container>
+    <mat-sidenav-content fxLayout="column" fxLayoutAlign="center center" [ngClass]="stickyClass$ | async">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<router-outlet name="footer"></router-outlet>

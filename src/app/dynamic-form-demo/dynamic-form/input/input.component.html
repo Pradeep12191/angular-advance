@@ -1,6 +1,6 @@
 <div [formGroup]="form" #formGroup>
     <mat-form-field appearance="outline">
-        <mat-label>{{ config.placeholder }}</mat-label>
+        <!-- <mat-label>{{ config.placeholder }}</mat-label> -->
         <input [formControlName]="config.ctrlName" matInput type="text">
     </mat-form-field>
     <button type="button" class="mg-lf-20" mat-flat-button color="primary" (click)="removeControl(config.ctrlName)" >Remove Field</button>

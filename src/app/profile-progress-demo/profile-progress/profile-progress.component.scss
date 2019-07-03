@@ -1,0 +1,47 @@
+
+
+.progress-container{
+    display: inline-block;
+    position: relative;
+
+    .progress-value{
+        transition: stroke-dashoffset 1s ease-in;
+    }
+}
+
+
+.upload-btn-container{
+    position: absolute;
+    height: 30px;
+    left: 70%;
+    bottom: 18%;
+
+    .upload-btn{
+        background: white;
+        height: 30px;
+        width: 30px;
+        position: relative;
+
+        img{
+            height: 25px;
+            width: 25px;
+            vertical-align: top;
+        }
+
+        &:focus{
+            outline: none;
+        }
+        &::ng-deep span.mat-button-wrapper{
+            position: absolute;
+            padding: 0px;
+            line-height: 25px;
+            vertical-align: top;
+            left: 2.5px;
+            top: 3px;
+        }
+    }
+}
+
+#native-file-btn{
+    display: none;
+}

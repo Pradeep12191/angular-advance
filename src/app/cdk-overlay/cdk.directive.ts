@@ -1,7 +1,7 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 import { Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { LoaderComponent } from './loader/loader.component';
+import { LoaderCDKComponent } from './loader/loader.component';
 import { MatSidenav } from '@angular/material';
 
 @Directive({
@@ -27,7 +27,7 @@ export class CdkDirective implements OnInit {
       positionStrategy: position,
       scrollStrategy: scroll
     });
-    const userProfilePortal = new ComponentPortal(LoaderComponent);
+    const userProfilePortal = new ComponentPortal(LoaderCDKComponent);
     setTimeout(() => {
       overlayRef.attach(userProfilePortal);
     });

@@ -1,0 +1,11 @@
+.grid-container{
+    // display: grid;
+    width: 100px;
+    // grid-template-columns: auto auto;
+    // grid-template-rows: 50px 50px;
+
+    .grid{
+        border: 1px solid;
+        cursor: pointer;
+    }
+}

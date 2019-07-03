@@ -1,0 +1,44 @@
+<button (click)="writeData()" mat-button>Write Data</button>
+<button (click)="writeMoreData()" mat-button>Write More Data</button>
+<button (click)="readAllData()" mat-button>Read All Data</button>
+<button (click)="readData()" mat-button>Read Data</button>
+<button (click)="changeData()" mat-button>Change Data</button>
+<button (click)="clearStore()" mat-button>Clear Store</button>
+<button (click)="dropDb()" mat-button>Drop Database</button>
+<button (click)="clearSingleItem()" mat-button>Clear single item in Store</button>
+
+<div>Indexed db : {{rData}}</div>
+<div>Local Storagre : {{localReadData}}</div>
+<button routerLink="/home/idbDemo">reload</button>
+<button (click)="open()"> Open new window</button>
+<!-- <div style="height: 500px;"></div> -->
+
+<div tabindex="0" class="overlay-container" fxLayout fxLayoutGap="10px"
+    >
+    <input (focus)="onFocus($event)" style="width: 50px" #ip *ngFor="let item of [1, 2, 3, 4]; let i = index"
+        (keydown.backspace)="onBackSpace(i)" (input)="onInput(i)"
+        type="text">
+</div>
+{{viewportHeight}}
+{{bodyScrollHeight}}
+<div style="height: 1000px;"></div>
+<button mat-button (click)="openOverlay=!openOverlay" #trigger="cdkOverlayOrigin"
+    cdkOverlayOrigin>Toggle cdkOverlayOrigin</button>
+    <div style="height: 1000px;"></div>
+
+<ng-template cdk-connected-overlay (detach)="overlayDetach(debugRef)" #debugRef="cdkConnectedOverlay"
+(attach)="overlayAttach(debugRef)" [cdkConnectedOverlayScrollStrategy]="scrollStrategy"
+    [cdkConnectedOverlayOrigin]="trigger" [cdkConnectedOverlayOpen]="openOverlay">
+    <mat-card>
+        <mat-card-header>Working</mat-card-header>
+    </mat-card>
+</ng-template>
+
+<mat-select [(ngModel)]="selectedScale">
+    <mat-option value="1">100%</mat-option>
+    <mat-option value="1.5">150%</mat-option>
+    <mat-option value="2">175%</mat-option>
+</mat-select>
+<div class="scroll-container">
+    <div [style.transform]="'scale(' + selectedScale + ')'" class="scroll-content"></div>
+</div>

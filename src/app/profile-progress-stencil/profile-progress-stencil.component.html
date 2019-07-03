@@ -1,0 +1,26 @@
+<!-- <div fxLayout>
+  <div fxLayout fxLayoutGap="25px" fxFlex="50">
+    <mat-card>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </mat-card>
+    <mat-card>
+      moved
+    </mat-card>
+  </div>
+  <div fxFlex></div>
+</div> -->
+
+<mat-form-field>
+  <input matInput [matDatepicker]="dp" placeholder="Month and Year"
+    [formControl]="date">
+  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+  <mat-datepicker #dp  panelClass="example-month-picker">
+  </mat-datepicker>
+</mat-form-field>
+{{date.value | json}}
+  <button (click)="show()">Show</button>

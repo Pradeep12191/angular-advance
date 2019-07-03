@@ -32,6 +32,7 @@ export class FlipcardComponent implements OnInit {
   public popoverWidth = 100;
   public popoverLeft = 0;
   public popoverArrowLeft = 46;
+  public translateCard = 'translateX(0)';
   private _cards = 2;
   @Input() card;
   @Input() cardNo;
@@ -98,6 +99,11 @@ export class FlipcardComponent implements OnInit {
     this.flipcardService.activeFlipcard = this;
     this.active = !this.active;
     this.popoverDisplay = this.popoverDisplay === 'block' ? 'none' : 'block';
+  }
+
+  swipe(event) {
+    console.log(event);
+    this.translateCard = `translateX(${event.deltaX}px)`;
   }
 
 }
