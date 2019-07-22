@@ -1,0 +1,79 @@
+<mat-table matSort multiTemplateDataRows matSortDisableClear [dataSource]="dataSource"
+    class="dyn-table">
+    <ng-container *ngFor="let col of columns">
+        <ng-container [matColumnDef]="col.id">
+            <ng-container *ngIf="col.sortable; else noSortTpl">
+                <!-- sort header cell -->
+                <mat-header-cell ngClass.lt-md="sm-header-cell" mat-sort-header [fxFlex]="col.header?.mobileWidth"
+                    [fxFlex.gt-sm]="col.header?.width" *matHeaderCellDef>
+                    <div *ngTemplateOutlet="hdrTpl; context:{'$implicit': col}"></div>
+                </mat-header-cell>
+            </ng-container>
+            <ng-template #noSortTpl>
+                <!-- no sort header cell -->
+                <mat-header-cell ngClass.lt-md="sm-header-cell" (click)="expandFilter(col.type)" [fxFlex]="col.header?.mobileWidth"
+                    [fxFlex.gt-sm]="col.header?.width" *matHeaderCellDef>
+                    <div *ngTemplateOutlet="hdrTpl; context:{'$implicit': col}"></div>
+                </mat-header-cell>
+            </ng-template>
+            <mat-cell ngClass.lt-md="sm-cell" *matCellDef="let data" [fxFlex]="col.column?.mobileWidth"
+                [fxFlex.gt-sm]="col.column?.width">
+                <app-dynamic-mat-cell-content minHeight="50px" (rowSelect)="rowSelected($event)"
+                    (labelClicked)="labelClickedHandler($event)"
+                    (arrowClicked)="arrowClickedHandler($event)"
+                    [data]="data" [value]="data[col.id]"
+                    [type]="col.type">
+                </app-dynamic-mat-cell-content>
+            </mat-cell>
+        </ng-container>
+    </ng-container>
+    <ng-container matColumnDef="expandedDetail">
+        <!-- expanded mat cell -->
+        <mat-cell class="details-cell-sm" *matCellDef="let row">
+            <div class="details-sm">
+                <div *ngTemplateOutlet="expandedTpl; context:{'$implicit': row}"></div>
+            </div>
+        </mat-cell>
+    </ng-container>
+    <ng-container *ngFor="let col of mobileSortableColumns">
+        <ng-container [matColumnDef]="col.id">
+            <!-- mobile sort header -->
+            <mat-header-cell mat-sort-header class="sorting-header-cell-sm"
+                *matHeaderCellDef>
+                <div class="sorting-details-sm">
+                    <div>
+                        {{ col.name }}
+                    </div>
+                </div>
+            </mat-header-cell>
+        </ng-container>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-header-row fxLayout="row wrap" [@expand]="sortHeaderState" class="sorting-header-row-sm"
+        *matHeaderRowDef="mobileSortableColumnIds"></mat-header-row>
+    <mat-row  class="primary-display-rows" *matRowDef="let row; columns: displayedColumns"></mat-row>
+    <mat-row [@expand]="row === expandedRow ? 'expanded' : 'collapsed'" class="details-row-sm" *matRowDef="let row; columns: ['expandedDetail']"></mat-row>
+</mat-table>
+
+<ng-template #expandedTpl let-row>
+        <div fxLayout="column" fxLayoutGap="15px">
+            <div fxLayout fxLayoutGap="15px" *ngFor="let detailCol of detailColumns">
+                <div class="details-col-header text-primary">
+                    {{detailCol.name}}
+                </div>
+                <div>
+                    <app-dynamic-mat-cell-content minHeight="0px" [data]="row"
+                        [value]="row[detailCol.id]" [type]="detailCol.type"></app-dynamic-mat-cell-content>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    
+    <ng-template #hdrTpl let-col>
+        <ng-container *ngIf="col.type === 'filter'; else hdrLabelTpl">
+            <i class="material-icons">filter_list</i>
+        </ng-container>
+        <ng-template #hdrLabelTpl>
+            {{ col.name }}
+        </ng-template>
+    </ng-template>

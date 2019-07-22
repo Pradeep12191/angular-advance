@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
     templateUrl: './grid-span.component.html',
@@ -16,6 +17,7 @@ export class GridSpanComponent implements OnInit {
     noOfCols = 3;
     nOfRows = 3;
     selectedGrids = [];
+    sub$ = new Subject();
     grids = [
         {
             id: 1,
@@ -53,6 +55,7 @@ export class GridSpanComponent implements OnInit {
     ];
 
     ngOnInit() {
+        this.sub$.next('next value');
         console.log('sadasd');
         for (let i = 0; i < this.noOfCols; i++) {
             if (this.gdColumns) {
@@ -103,4 +106,10 @@ export class GridSpanComponent implements OnInit {
 
         console.log(this.grids);
     }
+
+    subscribe() {
+        this.sub$.subscribe((value) => {
+          console.log(value);
+        });
+      }
 }

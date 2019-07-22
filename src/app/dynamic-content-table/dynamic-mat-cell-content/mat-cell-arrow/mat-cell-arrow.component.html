@@ -1,0 +1,4 @@
+<div (click)="rotateArrow()" class="arrow-container" [style.min-height]="minHeight" fxLayout fxLayoutAlign="center center">
+    <div [@rotateState]="data.more_details.direction"
+        class="cb-arrow"></div>
+</div>

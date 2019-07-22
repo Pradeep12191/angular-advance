@@ -72,3 +72,17 @@ html, body{
 .pop_plane{
     width: 100%;
 }
+
+html, body{
+    /* position: fixed; */
+}
+
+.mat-drawer-content{
+    /* position: fixed !important; */
+    /* overflow: hidden  !important;
+    position: fixed !important; */
+}
+
+html, body{
+    /* position: fixed; */
+}

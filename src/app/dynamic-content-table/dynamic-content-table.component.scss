@@ -1,0 +1,85 @@
+$border-radius: 6px;
+
+.mat-table.dyn-table{
+    border: 1px solid #eee;
+    border-radius: $border-radius;
+    background: transparent;
+    width: 100%;
+    // min-width: 300px;
+    // this class will set once we add more details column
+    .mat-column-more_details{
+        display: none;
+    }
+    .mat-header-row {
+        min-height: 50px;
+        background-color: rgb(251, 251, 251);
+        border-bottom: 0;
+        border-top-right-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        .mat-header-cell{
+            font-weight: normal;
+            font-size: 14px;
+            color: #9b9b9b;
+            &.mat-column-filter_sort{
+                justify-content: center;
+                cursor: pointer;
+            }
+        }
+        &.sorting-header-row-sm{
+            // height: 0px;
+            // min-height: 0px;
+            overflow: hidden;
+            mat-header-cell.sorting-header-cell-sm{
+                // height: 0px;
+                flex: 1 1 35%;
+                padding: 0px;
+                .sorting-details-sm{
+                    padding: 16px 0px;
+                    margin: 0 10px;
+                }
+            }
+        }
+    }
+    .mat-row{
+        min-height:50px;
+        border-bottom: 0;
+        overflow: hidden;
+        &:nth-child(4n+ 1), &:nth-child(4n){
+            background-color: rgb(251, 251, 251);
+        }
+        &:last-child, &:nth-last-child(2){
+            border-bottom-right-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+        &.details-row-sm{
+            min-height: 0px;
+        }
+        .details-cell-sm{
+            padding: 0px;
+        }
+        .mat-cell{
+            padding: 0px;
+            display: initial;
+        }
+    }
+  }
+
+.details-sm{
+    padding: 16px 0px;
+    margin: 0 10px;
+    .details-col-header{
+        min-width: 62px;
+        max-width: 62px;
+    }
+}
+
+.sorting-header-cell-sm{
+    padding: 0px;
+    min-height: 0;
+}
+
+app-info-container{
+    ::ng-deep .info-container{
+        margin: 0px;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="dyn-label" [style.min-height]="minHeight" fxLayout fxLayoutAlign="start center">
+    <div *ngIf="value !== '-'; else hyphenTpl">
+        {{ value }}
+    </div>
+    <ng-template #hyphenTpl>
+        <div class="hyphen">hyphen</div>
+    </ng-template>
+</div>

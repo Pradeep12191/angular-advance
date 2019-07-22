@@ -1,0 +1,9 @@
+mat-radio-button{
+    margin-left: 25px; 
+    &.margin-sm{
+        margin-left: 15px;
+    }
+    ::ng-deep label{
+        padding-bottom: 0 !important;
+    }
+}

@@ -1,17 +1,18 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { IndexedDbService } from './indexedDb.service';
 import { Router } from '@angular/router';
 import { Overlay, ScrollStrategy, OverlayRef, ScrollStrategyOptions, CdkConnectedOverlay, ViewportRuler } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { coerceCssPixelValue } from '@angular/cdk/coercion';
 import { SampleComponent } from './sample.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-idb-demo',
   templateUrl: './idb-demo.component.html',
   styleUrls: ['./idb-demo.component.css']
 })
-export class IdbDemoComponent implements OnInit {
+export class IdbDemoComponent implements OnInit, AfterViewInit {
   @ViewChildren('ip') ips: QueryList<ElementRef>;
   localReadData: any;
   rData: any;
@@ -20,13 +21,15 @@ export class IdbDemoComponent implements OnInit {
   scrollStrategy: ScrollStrategy;
   viewportHeight;
   bodyScrollHeight;
+  currentScrollPoistion;
   public overlayScroll: OverlayRef;
   constructor(
     private idb: IndexedDbService,
     private router: Router,
     private overlay: Overlay,
     private readonly sc: ScrollStrategyOptions,
-    private _viewPort: ViewportRuler
+    private _viewPort: ViewportRuler,
+    private sanitizer: DomSanitizer
   ) {
     this.scrollStrategy = this.sc.block();
   }
@@ -34,7 +37,7 @@ export class IdbDemoComponent implements OnInit {
   onBackSpace(index) {
     const root = document.querySelector('.mat-drawer-content') as HTMLElement;
     const x = root.scrollLeft, y = root.scrollTop;
-        setTimeout(() => {
+    setTimeout(() => {
       this.viewportHeight = x;
       this.bodyScrollHeight = y;
     }, 1000);
@@ -53,8 +56,22 @@ export class IdbDemoComponent implements OnInit {
   public overlayAttach(ref: CdkConnectedOverlay) {
     console.log("overlayAttach", ref.scrollStrategy);
   }
+  ngAfterViewInit() {
+    // document.addEventListener('focusin', function (event) {
+    //   if (event.target['tagName'] === 'INPUT') {
+    //     document.body.scrollTop = 0;
+    //   }
+    // });
+    // document.querySelector('.mat-drawer-content').addEventListener('scroll', (event) => {
+    //   this.currentScrollPoistion = (event.target as HTMLElement).scrollTop;
+    //   console.log(this.currentScrollPoistion);
+    // });
+  }
 
   onFocus(e) {
+    setTimeout(() => document.querySelector('.mat-drawer-content').scrollTop = 0)
+    this.currentScrollPoistion = window.scrollY;
+
     // const viewport = this._viewPort.getViewportSize()
     // setTimeout(() => {
     //   this.viewportHeight = viewport.height;
@@ -86,7 +103,12 @@ export class IdbDemoComponent implements OnInit {
     });
   }
   onInput(index) {
-    this.ips.toArray()[index + 1].nativeElement.focus();
+    setTimeout(() => this.ips.toArray()[index + 1].nativeElement.focus());
+
+  }
+
+  onBlur(event) {
+    window.scrollTo(0, this.currentScrollPoistion);
   }
 
   disableScroll() {
@@ -145,5 +167,9 @@ export class IdbDemoComponent implements OnInit {
   }
   async clearSingleItem() {
     this.idb.clearItemInStore('posts', '1001');
+  }
+
+  googleUrl() {
+    return  this.sanitizer.bypassSecurityTrustResourceUrl('https://www.w3schools.com');
   }
 }

@@ -15,12 +15,12 @@
 
 <div tabindex="0" class="overlay-container" fxLayout fxLayoutGap="10px"
     >
-    <input (focus)="onFocus($event)" style="width: 50px" #ip *ngFor="let item of [1, 2, 3, 4]; let i = index"
+    <input (focus)="onFocus($event)" (blur)="onBlur($event)" style="width: 50px" #ip *ngFor="let item of [1, 2, 3, 4]; let i = index"
         (keydown.backspace)="onBackSpace(i)" (input)="onInput(i)"
         type="text">
 </div>
 {{viewportHeight}}
-{{bodyScrollHeight}}
+{{currentScrollPoistion}}
 <div style="height: 1000px;"></div>
 <button mat-button (click)="openOverlay=!openOverlay" #trigger="cdkOverlayOrigin"
     cdkOverlayOrigin>Toggle cdkOverlayOrigin</button>
@@ -42,3 +42,5 @@
 <div class="scroll-container">
     <div [style.transform]="'scale(' + selectedScale + ')'" class="scroll-content"></div>
 </div>
+
+<iframe [src]="googleUrl()" frameborder="0"></iframe>

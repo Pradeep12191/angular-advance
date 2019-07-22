@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-grid',
@@ -12,9 +13,14 @@ export class GridComponent implements OnInit {
     private router: Router
   ) { }
 
+  
+
   ngOnInit() {
     console.log('init grid span');
+    
   }
+
+
 
   reload() {
     this.router.navigate(['gridSpan']);

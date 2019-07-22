@@ -25,4 +25,20 @@ export class DragDropDemoComponent implements OnInit {
 
   }
 
+  drag(event: DragEvent) {
+    event.dataTransfer.setData('text', (event.target as HTMLElement).id);
+    event.dataTransfer.effectAllowed = 'copy';
+  }
+
+  allowDrop(event: DragEvent) {
+    event.preventDefault();
+  }
+
+  drop(event: DragEvent) {
+    event.preventDefault();
+    event.dataTransfer.effectAllowed = 'copy';
+    const id = event.dataTransfer.getData('text');
+    (event.target as HTMLElement).appendChild(document.getElementById(id));
+  }
+
 }
