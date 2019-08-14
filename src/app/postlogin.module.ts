@@ -72,6 +72,8 @@ import { default as _rollupMoment, Moment } from 'moment';
 import { IdbDemoComponent } from './idb-demo/idb-demo.component';
 import { IndexedDbService  } from './idb-demo/indexedDb.service';
 import { SampleComponent } from './idb-demo/sample.component';
+import { NumberAnimateDemoComponent } from './number-animate-demo/number-animate-demo.component';
+import { NumberTextDirective } from './number-animate-demo/number-text.directive';
 
 const moment = _rollupMoment || _moment;
 
@@ -149,7 +151,9 @@ export const MY_FORMATS = {
         MatMenuTreeDemoComponent,
         GridSpanComponent,
         IdbDemoComponent,
-        SampleComponent
+        SampleComponent,
+        NumberAnimateDemoComponent,
+        NumberTextDirective
     ],
     providers: [
         FlipcardService,

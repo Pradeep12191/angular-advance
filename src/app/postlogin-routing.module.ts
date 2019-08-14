@@ -24,6 +24,7 @@ import { RawPiechartComponent } from './raw-piechart/raw-piechart.component';
 import { MatMenuTreeDemoComponent } from './mat-menu-tree-demo/mat-menu-tree-demo.component';
 import { GridSpanComponent } from './grid-span/grid-span.component';
 import { IdbDemoComponent } from './idb-demo/idb-demo.component';
+import { NumberAnimateDemoComponent } from './number-animate-demo/number-animate-demo.component';
 
 @NgModule({
     imports: [RouterModule.forChild([
@@ -56,6 +57,7 @@ import { IdbDemoComponent } from './idb-demo/idb-demo.component';
         { path: 'matMenuTree', component: MatMenuTreeDemoComponent },
         { path: 'gridSpan', component: GridSpanComponent },
         { path: 'idbDemo', component: IdbDemoComponent },
+        { path: 'numberAnimateDemo', component: NumberAnimateDemoComponent },
     ])],
     exports: [RouterModule]
 })
