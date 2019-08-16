@@ -1,19 +1,9 @@
-.number{
-    border: 1px solid;
-    height: 40px;
-    width: 15px;
-    overflow: hidden;
-    position: relative;
+.number-animate-container{
+    padding-bottom: 5px;
+    border-bottom: 2px solid #ccc;
 }
 
-.inline-block{
-width: 100%;
-height: 100%;
-top: 0px;
-left: 0px;
-text-align: center;
-position: absolute;
-display: flex;
-justify-content: center;
-align-items: center;
+.m-r-5{
+    margin-right: 5px;
+    font-size: 18px
 }

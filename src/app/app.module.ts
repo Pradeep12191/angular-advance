@@ -18,6 +18,7 @@ import { PostLoginLayoutComponent } from './layouts/postlogin-layout/postlogin-l
 import { HeaderLayoutModule } from './layouts/header-layout/header-layout.module';
 import { LoaderComponent } from './loader/loader.component';
 import { FooterLayoutModule } from './layouts/footer-layout/footer-layout.module';
+import { NumberAnimateComponent } from './number-animate-demo/number-animate/number-animate.component';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { FooterLayoutModule } from './layouts/footer-layout/footer-layout.module
     PreloginLayoutComponent,
     LoginComponent,
     PostLoginLayoutComponent,
-    LoaderComponent
+    LoaderComponent,
+    // NumberAnimateComponent
   ],
   providers: [AppService],
   bootstrap: [

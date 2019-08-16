@@ -45,7 +45,7 @@ import { NumberAnimateDemoComponent } from './number-animate-demo/number-animate
         { path: 'dynamicForm', component: DynamicFormDemoComponent },
         { path: 'dynamicDragDrop', component: DragDropDemoComponent },
         { path: 'cdkDragDrop', component: CdkDragDropDemoComponent },
-        { path: 'flipCards', component: CardsComponent },
+        // { path: 'flipCards', component: CardsComponent },
         { path: 'imageAnimation', component: ImageAnimationDemoComponent },
         { path: 'contentAnimation', component: ContentAnimationDemoComponent },
         { path: 'observable', component: ObservableDemoComponent },

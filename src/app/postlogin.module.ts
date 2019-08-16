@@ -74,6 +74,7 @@ import { IndexedDbService  } from './idb-demo/indexedDb.service';
 import { SampleComponent } from './idb-demo/sample.component';
 import { NumberAnimateDemoComponent } from './number-animate-demo/number-animate-demo.component';
 import { NumberTextDirective } from './number-animate-demo/number-text.directive';
+import { NumberAnimateComponent } from './number-animate-demo/number-animate/number-animate.component';
 
 const moment = _rollupMoment || _moment;
 
@@ -153,7 +154,8 @@ export const MY_FORMATS = {
         IdbDemoComponent,
         SampleComponent,
         NumberAnimateDemoComponent,
-        NumberTextDirective
+        NumberTextDirective,
+        NumberAnimateComponent
     ],
     providers: [
         FlipcardService,

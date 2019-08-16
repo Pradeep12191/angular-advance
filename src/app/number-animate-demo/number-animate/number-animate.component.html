@@ -1,0 +1,16 @@
+<div fxLayout class="number" [style.width]="commaFound ? '20px': '10px'">
+    <!-- <div class="inline-block">1</div>
+    <div class="inline-block">2</div> -->
+    <ng-container #numberHolder></ng-container>
+</div>
+
+<div class="inline-block" *numberText>0 <span *ngIf="commaFound">,</span> </div>
+<div class="inline-block" *numberText>1 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>2 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>3 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>4 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>5 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>6 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>7 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>8 <span *ngIf="commaFound">,</span></div>
+<div class="inline-block" *numberText>9 <span *ngIf="commaFound">,</span></div>

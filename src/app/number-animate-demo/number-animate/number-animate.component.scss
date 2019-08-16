@@ -1,0 +1,21 @@
+.number{
+    // border: 1px solid;
+    height: 20px;
+    width: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.inline-block{
+    font-size: 18px;
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0px;
+text-align: center;
+position: absolute;
+display: flex;
+justify-content: center;
+align-items: center;
+}
