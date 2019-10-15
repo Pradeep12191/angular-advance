@@ -7,11 +7,7 @@ import { LoaderService } from '../../services/loader.service';
 
 @Component({
     templateUrl: './postlogin-layout.component.html',
-    styles: [`
-    mat-sidenav-container{
-        height: calc(100% - 128px)
-    }
-`]
+    styleUrls: ['./postlogin-layout.component.scss']
 })
 export class PostLoginLayoutComponent {
 

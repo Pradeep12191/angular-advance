@@ -7,7 +7,7 @@
             <mat-list-item id="view-container-reference" routerLinkActive="active"
                 routerLink="/home/viewContainerReference" class="menu"
                 role="listitem">View Container Reference</mat-list-item>
-            <mat-list-item class="menu" role="listitem">OnPush ChangeDetection</mat-list-item>
+            <mat-list-item class="menu" routerLink="/home/changeDetection" role="listitem">OnPush ChangeDetection</mat-list-item>
             <mat-list-item class="menu" role="listitem">Animation Builder</mat-list-item>
             <mat-list-item routerLinkActive="active" routerLink="/home/cdkOverlay"
                 class="menu" role="listitem">CDK Overlay</mat-list-item>
@@ -44,18 +44,22 @@
                 role="listitem">Table with Radio</mat-list-item>
             <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/rawPieChart"
                 role="listitem">Raw PieChart</mat-list-item>
-                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/matMenuTree"
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/matMenuTree"
                 role="listitem">Mat Menu Tree</mat-list-item>
-                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/gridSpan"
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/gridSpan"
                 role="listitem">Grid Span</mat-list-item>
-                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/idbDemo"
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/idbDemo"
                 role="listitem">IndexedDb(idb)</mat-list-item>
-                <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/numberAnimateDemo"
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/numberAnimateDemo"
                 role="listitem">Number Animate demo</mat-list-item>
+            <mat-list-item class="menu" routerLinkActive="active" routerLink="/home/cdkVirtualScroll"
+                role="listitem">CDK Virtual Scroll</mat-list-item>
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
+
         <router-outlet></router-outlet>
+
     </mat-sidenav-content>
 </mat-sidenav-container>
 

@@ -1,0 +1,14 @@
+<!-- <div class="viewport">
+    <div *uiScroll="let item of datasource">
+        <b>{{item.title}}</b>
+    </div>
+</div> -->
+<button (click)="reset()">refresh</button>
+<!-- <input type="text" autocomplete="off" (change)="onChange()" > -->
+<ng-container *ngIf="infinte | async as people">
+        <cdk-virtual-scroll-viewport #view itemSize="32" class="view-port" (scrolledIndexChange)="scrollIndexChanged($event, people.length)">
+                <div class="item" *cdkVirtualFor="let p of people; let i = index">
+                    {{p}}
+                </div>
+            </cdk-virtual-scroll-viewport>
+</ng-container>

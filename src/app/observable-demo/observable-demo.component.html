@@ -32,6 +32,26 @@
   </dx-collapse-panel>
 </dx-accordion>
 
+<div fxLayout="row wrap" fxLayoutGap="25px">
+  <button (click)="fetchData_finalize()" mat-raised-button color="primary">FINALIZE</button>
+  <button (click)="fetchData_retry()" mat-raised-button color="primary">RETRY</button>
+  <button (click)="fetchData_retryDelay()" mat-raised-button color="primary">RETRY DELAY</button>
+  <button (click)="fetchData_retryDelayTimes()" mat-raised-button color="primary">RETRY DELAY 3</button>
+  <button (click)="stopRetry()" mat-raised-button color="primary">GIVE UP RETRYING</button>
+</div>
+
+<div fxLayout="column" fxLayoutGap="25px">
+    <div fxLayout>{{ timerVal }}</div>
+    <div fxlayout fxLayoutGap="25px">
+      <button mat-raised-button color="primary" (click)="startTimer()">Start</button>
+      <button mat-raised-button color="primary" (click)="stopTimer()">Stop</button>
+      <button mat-raised-button color="primary" (click)="concatMap$()">Concat Map</button>
+      <button mat-raised-button color="primary" (click)="downloadPdf()">Download Pdf</button>
+      <a href="http://localhost:3000/" target="blank">download</a>
+    </div>
+</div>
+
+
 <!-- <mat-card>
   <mat-card-header>
     <mat-card-title>Switch Map</mat-card-title>

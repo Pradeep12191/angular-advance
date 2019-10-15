@@ -1,0 +1,9 @@
+.scroll-viewport{
+    height: 100%;
+    overflow: auto;
+    display: block
+}
+
+mat-sidenav-container{
+    height: calc(100% - 128px)
+}

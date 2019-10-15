@@ -1,22 +1,29 @@
-import { Component, ViewChild, ViewContainerRef, OnInit, TemplateRef, ViewChildren, QueryList, AfterViewInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import {
+    Component, ViewChild, ViewContainerRef, OnInit, TemplateRef, ViewChildren,
+    QueryList, AfterViewInit, OnChanges, SimpleChanges, Input
+} from '@angular/core';
 import { NumberTextDirective } from './number-text.directive';
 import { AnimationBuilder, style, animate, AnimationPlayer } from '@angular/animations';
 import { MatSliderChange } from '@angular/material';
+import { slideRight } from './slide-right';
 
 @Component({
     templateUrl: './number-animate-demo.component.html',
-    styleUrls: ['./number-animate-demo.component.scss']
+    styleUrls: ['./number-animate-demo.component.scss'],
+    animations: [slideRight]
 })
 export class NumberAnimateDemoComponent implements OnInit, AfterViewInit {
 
     slides = [1, 2];
+
+    cards = [1, 2];
 
     activeEl;
     value = 0;
     activeNumber;
     enterAnimtionPlayer: AnimationPlayer;
     leaveAnimtionPlayer: AnimationPlayer;
-    numbers = [{ value: '1' }, { value: '0' }, { value: '0' }, { value: '0' }]
+    numbers = [{ value: '1' }, { value: '0' }, { value: '0' }, { value: '0' }];
     totalValue;
     previousTotalValue;
 
@@ -26,26 +33,26 @@ export class NumberAnimateDemoComponent implements OnInit, AfterViewInit {
 
     onSliderChange($event: MatSliderChange) {
         this.totalValue = $event.value;
-        const numberArray = this.totalValue.toString().split('').reverse()
+        const numberArray = this.totalValue.toString().split('').reverse();
         this.numbers = this.numbers.reverse();
 
         const numberLen = numberArray.length;
-        let numbersLen = this.numbers.length - 1;
-        let numCount = 0;
+        const numbersLen = this.numbers.length - 1;
+        const numCount = 0;
         if (this.totalValue > this.previousTotalValue) {
             for (let i = 0; i < numberLen; i++) {
                 if (this.numbers[i]) {
                     this.numbers[i].value = numberArray[i];
                 } else {
-                    this.numbers.push({ value: numberArray[i] })
+                    this.numbers.push({ value: numberArray[i] });
                 }
             }
-        } else { 
+        } else {
             for (let i = 0; i < this.numbers.length; i++) {
                 if (numberArray[i]) {
                     this.numbers[i].value = numberArray[i];
                 } else {
-                    this.numbers.pop()
+                    this.numbers.pop();
                 }
             }
         }
@@ -59,9 +66,9 @@ export class NumberAnimateDemoComponent implements OnInit, AfterViewInit {
 
         for (let i = 0; i < numberStrArr.length; i++) {
             if (numberStrArr[i + 1] && numberStrArr[i + 1] === ',') {
-                finalArr.push(numberStrArr[i] + numberStrArr[i + 1])
+                finalArr.push(numberStrArr[i] + numberStrArr[i + 1]);
             } else if (numberStrArr[i] !== ',') {
-                finalArr.push(numberStrArr[i])
+                finalArr.push(numberStrArr[i]);
             }
         }
 
@@ -95,5 +102,8 @@ export class NumberAnimateDemoComponent implements OnInit, AfterViewInit {
 
     }
 
+    add() {
+        this.cards.unshift(this.cards.length + 1);
+    }
 
 }

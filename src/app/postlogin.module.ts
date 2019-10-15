@@ -75,6 +75,13 @@ import { SampleComponent } from './idb-demo/sample.component';
 import { NumberAnimateDemoComponent } from './number-animate-demo/number-animate-demo.component';
 import { NumberTextDirective } from './number-animate-demo/number-text.directive';
 import { NumberAnimateComponent } from './number-animate-demo/number-animate/number-animate.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { VirtualScrollComponent } from './virtual-scroll-demo/vitrual-scroll-demo.component';
+import { UiScrollModule } from 'ngx-ui-scroll';
+import { HttpClientModule } from '@angular/common/http';
+import { ChangeDetectionStrategyDemoComponent } from './change-detection-strategy-demo/change-detection-strategy-demo.component';
+import { ListComponent } from './change-detection-strategy-demo/list/list.component';
+import { ListItemComponent } from './change-detection-strategy-demo/list/list-item/list-item.component';
 
 const moment = _rollupMoment || _moment;
 
@@ -108,7 +115,10 @@ export const MY_FORMATS = {
         MaterialModule,
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ScrollingModule,
+        UiScrollModule,
+        HttpClientModule
     ],
     declarations: [
         VirtualKeypadComponent,
@@ -155,7 +165,11 @@ export const MY_FORMATS = {
         SampleComponent,
         NumberAnimateDemoComponent,
         NumberTextDirective,
-        NumberAnimateComponent
+        NumberAnimateComponent,
+        VirtualScrollComponent,
+        ChangeDetectionStrategyDemoComponent,
+        ListComponent,
+        ListItemComponent
     ],
     providers: [
         FlipcardService,

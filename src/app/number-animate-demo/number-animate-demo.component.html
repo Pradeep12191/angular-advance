@@ -3,13 +3,16 @@
         <mat-card-title>Number Animater</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <mat-slider (input)="onSliderChange($event)" [step]="1" min="1000" max="1000000"></mat-slider>
+        <mat-slider (input)="onSliderChange($event)" [step]="1" min="1000"
+            max="1000000"></mat-slider>
         <div fxLayout>
 
             <div fxLayout class="number-animate-container">
                 <div class="m-r-5">$</div>
                 <!-- {{ numbers | json }}    -->
-                <number-animate *ngFor="let number of numbers" fxLayout="column" fxLayoutAlign="center center" [total]="totalValue" [value]="number.value"></number-animate>
+                <number-animate *ngFor="let number of numbers" fxLayout="column"
+                    fxLayoutAlign="center center" [total]="totalValue"
+                    [value]="number.value"></number-animate>
                 <!-- <number-animate fxLayout="column" fxLayoutAlign="center center" [total]="totalValue" [value]="numbers[1]"></number-animate> -->
                 <!-- <number-animate fxLayout="column" fxLayoutAlign="center center" [total] [value]="value"></number-animate> -->
             </div>
@@ -18,3 +21,17 @@
         <!-- {{value}} -->
     </mat-card-content>
 </mat-card>
+
+<button mat-raised-button color="primary" (click)="add()">Add Item</button>
+
+<div fxLayout>
+    <div fxFlex="25">
+
+    </div>
+    <div fxLayout="column" fxLayoutGap="20px" fxFlex>
+        <mat-card  *ngFor="let card of cards" @slideRight>
+            <mat-card-content>{{ card }}</mat-card-content>
+        </mat-card>
+    </div>
+    <div fxFlex="25"></div>
+</div>

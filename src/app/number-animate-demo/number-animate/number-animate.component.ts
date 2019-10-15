@@ -1,4 +1,7 @@
-import { Component, ViewChild, ViewContainerRef, OnInit, TemplateRef, ViewChildren, QueryList, AfterViewInit, OnChanges, SimpleChanges, Input } from '@angular/core';
+import {
+    Component, ViewChild, ViewContainerRef, OnInit, TemplateRef, ViewChildren, QueryList, AfterViewInit,
+    OnChanges, SimpleChanges, Input
+} from '@angular/core';
 import { NumberTextDirective } from '../number-text.directive';
 import { AnimationBuilder, style, animate, AnimationPlayer } from '@angular/animations';
 
@@ -12,7 +15,7 @@ const slideDown = {
         // style({ transform: 'translateX(0%)' }),
         animate(300, style({ transform: 'translateY(100%)' }))
     ]
-}
+};
 
 const slideUp = {
     enter: [
@@ -23,9 +26,10 @@ const slideUp = {
         // style({ transform: 'translateX(0%)' }),
         animate(300, style({ transform: 'translateY(-100%)' }))
     ]
-}
+};
 
 @Component({
+    // tslint:disable-next-line:component-selector
     selector: 'number-animate',
     templateUrl: './number-animate.component.html',
     styleUrls: ['./number-animate.component.scss']
@@ -53,18 +57,18 @@ export class NumberAnimateComponent implements AfterViewInit, OnChanges, OnInit 
     }
 
     ngAfterViewInit() {
-        let numberVal
+        let numberVal;
         if (this.value.indexOf(',') !== -1) {
-            //comma found
+            // comma found
             setTimeout(() => {
                 this.commaFound = true;
-            })
-            
-            numberVal = this.value.substring(0, 1)
+            });
+
+            numberVal = this.value.substring(0, 1);
         } else {
             setTimeout(() => {
                 this.commaFound = false;
-            })
+            });
             numberVal = this.value;
         }
         this.activeNumber = numberVal;
@@ -76,22 +80,23 @@ export class NumberAnimateComponent implements AfterViewInit, OnChanges, OnInit 
 
 
     ngOnChanges(changes: SimpleChanges) {
-        if (changes['value'] && changes['value'].currentValue !== undefined && !changes['value'].isFirstChange() && changes['value'].previousValue !== changes['value'].currentValue) {
+        if (changes['value'] && changes['value'].currentValue !== undefined &&
+            !changes['value'].isFirstChange() && changes['value'].previousValue !== changes['value'].currentValue) {
             let number = changes['value'].currentValue;
             // this.activeNumber = this.numberTexts[number];
             console.log(number);
 
             if (number.indexOf(',') !== -1) {
-                //comma found
+                // comma found
                 this.commaFound = true;
-                number = this.value.substring(0, 1)
+                number = this.value.substring(0, 1);
             } else {
                 this.commaFound = false;
                 number = this.value;
             }
 
             if (this.enterAnimtionPlayer) {
-                this.enterAnimtionPlayer.finish()
+                this.enterAnimtionPlayer.finish();
             }
             if (this.leaveAnimtionPlayer) {
                 this.leaveAnimtionPlayer.finish();
@@ -101,7 +106,7 @@ export class NumberAnimateComponent implements AfterViewInit, OnChanges, OnInit 
                 // incrementing
                 this.leaveAnimation(this.activeEl, slideUp.leave);
             } else {
-                this.leaveAnimation(this.activeEl, slideDown.leave)
+                this.leaveAnimation(this.activeEl, slideDown.leave);
             }
             const elem = this.numberTexts.toArray()[+number];
             const eleRef = this.numberContainer.createEmbeddedView(elem);
@@ -120,22 +125,6 @@ export class NumberAnimateComponent implements AfterViewInit, OnChanges, OnInit 
         if (this.enterAnimtionPlayer) { this.enterAnimtionPlayer.destroy(); }
         const builder = this.animationBuilder.build(animationMetaData);
         this.enterAnimtionPlayer = builder.create(el);
-
-        this.enterAnimtionPlayer.onDone(() => {
-            // setTimeout(() => {
-            //     this.leaveAnimation(this.activeEl);
-            //     this.activeNumber++;
-            //     if (this.activeNumber > 9) {
-            //         this.activeNumber = 0;
-            //     }
-            //     const elem = this.numberTexts.toArray()[this.activeNumber];
-            //     // this.numberContainer.clear();
-            //     const eleRef = this.numberContainer.createEmbeddedView(elem);
-            //     this.activeEl = eleRef.rootNodes[0];
-            //     this.enterAnimation(this.activeEl);
-            // }, 1000)
-
-        });
         this.enterAnimtionPlayer.play();
     }
 
@@ -148,5 +137,4 @@ export class NumberAnimateComponent implements AfterViewInit, OnChanges, OnInit 
         });
         this.leaveAnimtionPlayer.play();
     }
-
 }

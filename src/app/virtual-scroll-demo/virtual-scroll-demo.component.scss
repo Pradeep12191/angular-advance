@@ -1,0 +1,30 @@
+.scroll-viewport{
+    height: 575px;
+    overflow: auto;
+    display: block
+}
+
+.cdk-card{
+    max-width: 400px;
+    height: 575px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .viewport {
+    height: 300px;
+    overflow-y: auto;
+    overflow-anchor: none;
+}
+
+.view-port{
+    height: 400px;
+    overflow: auto
+}
+
+.item{
+    height: 32px;
+}
