@@ -30,7 +30,7 @@
     "bootstrap": "^4.3.1",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.6.5",
-    "d3": "^5.9.2",
+    "d3": "^7.6.1",
     "dx-accordion": "file:dx-accordion-1.0.1.tgz",
     "dx-project": "file:dx-project-1.0.0.tgz",
     "hammerjs": "^2.0.8",
